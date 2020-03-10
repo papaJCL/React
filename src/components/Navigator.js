@@ -42,7 +42,7 @@ class Navigator extends Component{
     renderNavigationBar(){
         return (
                 <Router>
-                <Navbar expand="lg" className="justify-content-center" variant="dark" >
+                <Navbar expand="sm" className="justify-content-center" variant="dark" >
                     <Nav fill>
                     <Nav.Item><Nav.Link as={NavLink} to="/" exact>Home</Nav.Link> </Nav.Item>
                     <Nav.Item><Nav.Link as={NavLink} to="/GPA" exact>GPA-Calculator</Nav.Link></Nav.Item>

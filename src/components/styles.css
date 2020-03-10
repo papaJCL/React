@@ -18,6 +18,10 @@ body {
   color: black;
 }
 
+.display-linebreak {
+  white-space: pre-line;
+}
+
 
 h1 {
   color: white;
@@ -27,5 +31,5 @@ h1 {
 
 
 
-* {font-size: 23px;}
+* {font-size: 2vh;}
 

@@ -72,15 +72,15 @@ class GPA extends Component{
         grade = grade.toLowerCase();
         switch(grade) {
             case ('a'):
-              return ((credit * 4)/credit);
+              return ((credit * 4));
             case ('b'):
-              return ((credit * 3)/credit);
+              return ((credit * 3));
             case ('c'):
-              return ((credit * 2)/credit);
+              return ((credit * 2));
             case ('d'):
-              return ((credit * 1)/credit);
+              return ((credit * 1));
             case ('f'):
-              return ((credit * 0)/credit);
+              return ((credit * 0));
           }
     }
 
@@ -89,7 +89,7 @@ class GPA extends Component{
         for (var i = 0; i < gradeArray.length; i++){
             sumArray.push((this.convertGradeToNum(gradeArray[i], credits[i])))
         }
-        return ((sumArray.reduce((a, b) => a + b, 0)) / gradeArray.length);
+        return ((sumArray.reduce((a, b) => a + b, 0)) / credits.reduce((a, b) => a + b, 0));
     }
 
 

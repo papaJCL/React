@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Input } from 'reactstrap'
 
-import { Form, Row, Col, Card, Button , FormControl} from 'react-bootstrap';
+import { Form, Row, Col, Card, Button , FormControl, Container} from 'react-bootstrap';
 import Swal from 'sweetalert2'
 
 
@@ -25,9 +25,7 @@ class GPA extends Component{
             grade4: '',          credit4: '',
             grade5: '',          credit5: '',
             grade6: '',          credit6: '',
-            finalGPACalculate : 
-            {grades: [], credits: []},
-            alert: null
+            finalAnswer: null,
         }
     }
 
@@ -60,19 +58,45 @@ class GPA extends Component{
         let newCredits = []
         for (var i = 0; i < creditArray.length; i++){
             var integer = parseInt(creditArray[i], 10);
-            if (creditArray[i].length === 0  || Number.isInteger(integer) == true){
+            if (Number.isInteger(integer) == true && creditArray[i].length != 0){
                 newCredits.push(integer);
             }
-            else{
+            else if (creditArray[i].length != 0){
                 this.showErrorBox();
             }
         }
         return newCredits;
     }
 
+    convertGradeToNum(grade, credit){
+        grade = grade.toLowerCase();
+        switch(grade) {
+            case ('a'):
+              return ((credit * 4)/credit);
+            case ('b'):
+              return ((credit * 3)/credit);
+            case ('c'):
+              return ((credit * 2)/credit);
+            case ('d'):
+              return ((credit * 1)/credit);
+            case ('f'):
+              return ((credit * 0)/credit);
+          }
+    }
+
+    getCalculation(gradeArray, credits){
+        let sumArray = []
+        for (var i = 0; i < gradeArray.length; i++){
+            sumArray.push((this.convertGradeToNum(gradeArray[i], credits[i])))
+        }
+        return ((sumArray.reduce((a, b) => a + b, 0)) / gradeArray.length);
+    }
+
+
     calculateGPA(){
         let grades = [];
         let credits = [];
+        let finalAnswer = null;
         const a = this.state;
         Object.entries(a).map(([key, value]) => {
             if (key.includes("grade")){
@@ -84,9 +108,12 @@ class GPA extends Component{
         })
         grades = this.checkIfValidGrade(grades);
         credits = this.checkIfValidCredits(credits);
-        console.log("new grades " + grades);
-        console.log("new credits " + credits);
-        
+        finalAnswer = this.getCalculation(grades , credits);
+
+        if (!isNaN(finalAnswer)){
+            this.props.setFinalAnswerState(finalAnswer);
+        }
+
     }
 
     handleGradeChange(grade, e){
@@ -103,15 +130,16 @@ class GPA extends Component{
 
     renderFormRow(grade, credit){
         return(
-                <Form.Row>
-                    <Col >
-                    <Input bsSize="sm" name={grade} placeholder={"Letter Grade(A-F)"}  onChange={(e) => this.handleGradeChange(grade, e)}/>                                                                
-                    </Col>
-                    <Col>
-                    <Input bsSize="sm" name={credit} placeholder={"Credits"} onChange={(e) => this.handleCreditChange(credit, e)} />
-                    </Col>      
-            </Form.Row>
-           
+                <Container>
+                    <Row className="justify-content-md-center">
+                        <Col xs lg="5" >
+                            <Input   bsSize="sm" name={grade} placeholder={"Letter Grade(A-F)"}  onChange={(e) => this.handleGradeChange(grade, e)}/>                                                                
+                        </Col >
+                        <Col xs lg="5" >
+                            <Input   bsSize="sm" name={credit} placeholder={"Credits"} onChange={(e) => this.handleCreditChange(credit, e)} />
+                        </Col>      
+                    </Row>
+                </Container>
         )
     }
 
@@ -139,19 +167,32 @@ class GPA extends Component{
             {this.renderFormRow("grade4", "credit4")}
             {this.renderFormRow("grade5", "credit5")}
             {this.renderFormRow("grade6", "credit6")}
+            <br/>
             <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
         </div>
         );
     }
 
     render(){
+
+        if (this.props.finalGpaAnswer == null){
         return(
         <div>
             {this.explainCard()}
             <br/>
             {this.renderInputs()}
         </div>
-        )
+        )}
+        else if (this.props.finalGpaAnswer != null){
+            return(
+                <div>
+                    <h1> YOUR GPA IS</h1>
+                    <br/>
+                    <h1>{ (this.props.finalGpaAnswer).toFixed(2) }</h1>
+                    <br/>
+                    <Button size="sm" onClick={this.props.resetGPAState} >Reset</Button>
+                </div> )
+        }
     }
 }
 

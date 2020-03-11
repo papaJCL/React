@@ -10,6 +10,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Navigator extends Component{
 
+    constructor(props) {
+        super(props);
+
+
+    }
+
     render(){
         return(
             <center>
@@ -20,11 +26,11 @@ class Navigator extends Component{
         )
     }
 
-    renderGPA(){
-        return(
-            <GPA />
-        )
-    }
+    // renderGPA(){
+    //     return(
+    //         <GPA />
+    //     )
+    // }
 
     renderHome(){
         return(
@@ -49,7 +55,13 @@ class Navigator extends Component{
                     <Nav.Item><Nav.Link as={NavLink} to="/Ree" exact>Ree</Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar>
-                <Route path="/GPA" exact component={this.renderGPA} />
+                <Route
+                    path="/GPA"
+                    render = {() => (<GPA 
+                    finalGpaAnswer ={this.props.finalGpaAnswer} 
+                    setFinalAnswerState = {this.props.setFinalAnswerState}
+                    resetGPAState = {this.props.resetGPAState}
+                    />) } />
                 <Route path="/" exact component={this.renderHome} />
                 <Route path="/Ree" exact component={this.renderRee} />
                 </Router>

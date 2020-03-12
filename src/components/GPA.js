@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import calcPhoto from './calc.png';
 
 
 
@@ -145,8 +146,8 @@ class GPA extends Component{
 
     explainCard(){
         return(
-            <div className = "display-linebreak">
-                <Card className="bg-transparent text-white">
+            <div className="display-linebreak">
+                <Card className="card border-0">
                     <Card.Text>
                             {"For the letter grade column, put in your letter grade(A through F)\n"+
                             "For the credits column put how many credits its worth\n"+

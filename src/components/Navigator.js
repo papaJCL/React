@@ -6,6 +6,8 @@ import { Navbar,  NavItem, Nav, Container} from 'react-bootstrap';
 import {BrowserRouter as Router,Link,NavLink,Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import logo from './logo.png';
+
 
 
 class Navigator extends Component{
@@ -48,12 +50,23 @@ class Navigator extends Component{
     renderNavigationBar(){
         return (
                 <Router>
-                <Navbar expand="sm" className="justify-content-center" variant="dark" >
-                    <Nav fill>
+                
+                <Navbar expand="sm" className="justify-content-center" bg="light" variant="light"   >
+                <Navbar.Toggle />
+                <Navbar.Collapse >
+                    <Nav fill >
+                    <img
+                    src={logo}
+                    width="150"
+                    height="45"
+                    className="d-inline-block align-top"
+                    alt="React Bootstrap logo"
+                />
                     <Nav.Item><Nav.Link as={NavLink} to="/" exact>Home</Nav.Link> </Nav.Item>
                     <Nav.Item><Nav.Link as={NavLink} to="/GPA" exact>GPA-Calculator</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link as={NavLink} to="/Ree" exact>Ree</Nav.Link></Nav.Item>
                     </Nav>
+                    </Navbar.Collapse>
                 </Navbar>
                 <Route
                     path="/GPA"
@@ -65,6 +78,7 @@ class Navigator extends Component{
                 <Route path="/" exact component={this.renderHome} />
                 <Route path="/Ree" exact component={this.renderRee} />
                 </Router>
+
         );
       }
     }

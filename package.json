@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "predeploy": "npm run build" , 
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Jeremy Lesser",
   "license": "ISC",
@@ -15,13 +15,13 @@
     "@sweetalert2/themes": "^3.1.2",
     "bootstrap": "^4.4.1",
     "css-loader": "^3.4.2",
-    "file-loader": "^5.0.2",
+    "file-loader": "^5.1.0",
     "gh-pages": "^2.2.0",
     "javascript-terminal": "^1.0.3",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
+    "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0-beta.17",
     "react-bootstrap-sweetalert": "^5.1.9",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
     "react-terminal-component": "^1.4.1",
     "reactstrap": "^8.4.1",
@@ -29,16 +29,17 @@
     "sweetalert2": "^9.10.0",
     "terminal-in-react": "^4.3.1",
     "terminal-in-react-pseudo-file-system-plugin": "^3.0.0",
-    "url-loader": "^3.0.0"
+    "url-loader": "^3.0.0",
+    "use-dencrypt-effect": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.41.6",
+    "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   }

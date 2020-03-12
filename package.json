@@ -1,7 +1,6 @@
 {
   "name": "react-deployment",
   "version": "1.0.0",
-  "homepage" : "https//papaJCL.github.io/Jeremy-Lesser",
   "description": "main baseplate",
   "main": "index.js",
   "scripts": {

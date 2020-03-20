@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Navigator from './Navigator.js'
 
-import './styles.css'; 
+import './styles.css';
 
-class App extends Component{
+class App extends Component {
 
     constructor(props) {
         super(props);
@@ -12,33 +12,38 @@ class App extends Component{
         this.resetGPAState = this.resetGPAState.bind(this);
 
         this.state = {
-            renderGPACalculator : false,
+            renderGPACalculator: false,
             finalGpaAnswer: null,
         }
 
     }
 
-    render(){
+    render() {
         return (
-            <center><div className = "tiledBackground" >
-              <Navigator 
-              finalGpaAnswer = {this.state.finalGpaAnswer} 
-              setFinalAnswerState = {this.setFinalAnswerState}
-              resetGPAState = {this.resetGPAState}
-              />
-            </div></center>
-          );
+            <div>
+            <center>
+            <h1>HEADER SHOULD BE MERE MATE</h1>
+                <div className="tiledBackground" >
+                    <Navigator
+                        finalGpaAnswer={this.state.finalGpaAnswer}
+                        setFinalAnswerState={this.setFinalAnswerState}
+                        resetGPAState={this.resetGPAState}
+                    />
+                </div>
+            </center>
+            </div>
+        );
     }
 
-    setFinalAnswerState(answer){
+    setFinalAnswerState(answer) {
         this.setState({
-            finalGpaAnswer : answer
+            finalGpaAnswer: answer
         });
     }
 
-    resetGPAState(){
+    resetGPAState() {
         this.setState({
-            finalGpaAnswer : null
+            finalGpaAnswer: null
         });
     }
 }

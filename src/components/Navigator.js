@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import GPA from './GPA.js'
 import Home from './Home.js'
 import ToDo from './ToDo.js'
+import Trip from './Trip.js'
 import { Navbar, NavItem, Nav, Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Link, NavLink, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,7 +43,7 @@ class Navigator extends Component {
 
     renderCS314() {
         return (
-            <div>CS314 Link here</div>
+            <Trip />
         )
     }
 
@@ -60,14 +61,7 @@ class Navigator extends Component {
                 <Navbar expand="sm" className="justify-content-center" bg="light" variant="light"   >
                     <Navbar.Toggle />
                     <Navbar.Collapse >
-                        <Nav fill >
-                            <img
-                                src={logo}
-                                width="150"
-                                height="45"
-                                className="d-inline-block align-top"
-                                alt="React Bootstrap logo"
-                            />
+                        <Nav fill variant="tabs" >
                             <Nav.Item><Nav.Link as={NavLink} to="/" exact>Home</Nav.Link> </Nav.Item>
                             <Nav.Item><Nav.Link as={NavLink} to="/GPA" exact>GPA-Calculator</Nav.Link></Nav.Item>
                             <Nav.Item><Nav.Link as={NavLink} to="/toDo" exact>Placeholder</Nav.Link></Nav.Item>

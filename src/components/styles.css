@@ -9,10 +9,10 @@ body {
 
 
   .tiledBackground {
-    max-width: 60%;
+    max-width: 70%;
     height: 100vh;
     width: auto\9;
-    color: black;
+    outline-color: gray;
     outline-style: solid
   }
 

@@ -5,7 +5,7 @@ import { Form, Row, Col, Card, Button, FormControl, Container } from 'react-boot
 class Trip extends Component {
 
     openInNewTab() {
-        var win = window.open("http://ec2-3-19-65-102.us-east-2.compute.amazonaws.com:8888/", '_blank');
+        var win = window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", '_blank');
         return (win)
     }
 

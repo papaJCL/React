@@ -34,7 +34,7 @@ class App extends Component {
         <Router>
           <NavigationBar />
             <Switch>
-              <Route exact path="/React" component={Home} />
+              <Route exact path="/index.html" component={Home} />
               <Route path="/GPA"
                 render={() => (<GPA
                   finalGpaAnswer={this.state.finalGpaAnswer}

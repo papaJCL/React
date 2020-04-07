@@ -21,7 +21,7 @@ const Styles = styled.div`
 export const NavigationBar = () => (
   <Styles>
   <Navbar expand="lg" bg="text-secondary">
-    <Navbar.Brand href="/React">Muh Brand</Navbar.Brand>
+    <Navbar.Brand href="/index.html">Muh Brand</Navbar.Brand>
     <Navbar.Toggle />
     <Navbar.Collapse >
       <Nav  bg="text-secondary" className="ml-auto">

@@ -6,7 +6,7 @@ import Trip from './Trip.js'
 import { NavigationBar } from './components/NavigationBar';
 import { Layout } from './components/Layout'
 import { NoMatch } from './NoMatch';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter  as Router, Route, Switch } from 'react-router-dom';
 import './css/styles.css';
 
 

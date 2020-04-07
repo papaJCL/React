@@ -1,4 +1,5 @@
 {
+  "author": "Jeremy Lesser",
   "name": "react-deployment",
   "version": "1.0.0",
   "description": "main baseplate",
@@ -9,12 +10,13 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "author": "Jeremy Lesser",
+  "proxy": "http://localhost:5000",
   "license": "ISC",
   "dependencies": {
     "@sweetalert2/themes": "^3.1.2",
     "bootstrap": "^4.4.1",
     "css-loader": "^3.4.2",
+    "express": "^4.17.1",
     "file-loader": "^5.1.0",
     "gh-pages": "^2.2.0",
     "javascript-terminal": "^1.0.3",

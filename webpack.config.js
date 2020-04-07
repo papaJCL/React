@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: [
         new htmlWebPackPlugin({
-                template: './public/index.html'
+                template: './dist/index.html'
             })
     ] , 
     devServer: {

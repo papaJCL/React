@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import { Input } from 'reactstrap'
-
-import { Form, Row, Col, Card, Button, FormControl, Container } from 'react-bootstrap';
+import { Row, Col, Card, Button, Container } from 'react-bootstrap';
 import Swal from 'sweetalert2'
-
-import GPAText from './GPAText.js'
-
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Jumbotron } from './components/Jumbotron';
 
 
 
 class GPA extends Component {
-
     constructor(props) {
         super(props);
 
@@ -150,10 +144,10 @@ class GPA extends Component {
             <div className="display-linebreak">
                 <Card className="card border-0">
                     <Card.Text>
-                        {"For the letter grade column, put in your letter grade(A through F)\n" +
+                        <p>{"For the letter grade column, put in your letter grade(A through F)\n" +
                             "For the credits column put how many credits its worth\n" +
                             "Leave the rest of the rows blank once you've put all your classes in\n" +
-                            "Press Calculate when done"}
+                            "Press Calculate when done"}</p>
                     </Card.Text>
                 </Card>
             </div>
@@ -175,36 +169,32 @@ class GPA extends Component {
         );
     }
 
-    renderPhoto() {
-        return (
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        )
-    }
-
-
-
     render() {
-
         if (this.props.finalGpaAnswer == null) {
             return (
-                <div>
-
-                    {this.explainCard()}
-                    <br />
-                    {this.renderInputs()}
+                <div >
+                    <Jumbotron message="GPA Calculator" pic="gpaPic" />
+                    <Container>
+                        {this.explainCard()}
+                        <br />
+                        {this.renderInputs()}
+                    </Container>
                 </div>
             )
         }
         else if (this.props.finalGpaAnswer != null) {
             return (
                 <div>
-                    <GPAText answer={this.props.finalGpaAnswer}
-                        resetGPAState={this.props.resetGPAState}
-                    />
-                    <Button size="sm" onClick={this.props.resetGPAState} >Reset</Button>
-                </div>)
+                    <Jumbotron message="GPA Answer" pic="gpaPic" />
+                    <Container>
+                        <h1>{this.props.finalGpaAnswer}</h1>
+                        <Button size="sm" onClick={this.props.resetGPAState} >Reset</Button>
+                    </Container>
+                </div>
+            )
         }
     }
+
 }
 
 export default GPA;

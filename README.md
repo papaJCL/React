@@ -1,11 +1,1 @@
-TO DO:
-
-
-
-Fix: Make it so E doesn't trigger the flag(it's technically between A-F regex)
-
-
-Fix: Make it so the navigator bar goes to dropdown menu on mobile
-
-Make gool GPA text
-Picture headers
+PUBLIC URL: https://react-portfolio1.s3.us-east-2.amazonaws.com/index.html

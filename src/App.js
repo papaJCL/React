@@ -6,7 +6,7 @@ import Trip from './Trip.js'
 import { NavigationBar } from './components/NavigationBar';
 import { Layout } from './components/Layout'
 import { NoMatch } from './NoMatch';
-import { HashRouter  as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter  as Router, Route, Switch } from 'react-router-dom';
 import './css/styles.css';
 
 
@@ -35,6 +35,7 @@ class App extends Component {
           <NavigationBar />
             <Switch>
               <Route exact path="/index.html" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route path="/GPA"
                 render={() => (<GPA
                   finalGpaAnswer={this.state.finalGpaAnswer}

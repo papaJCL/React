@@ -11,7 +11,7 @@ class Home extends Component {
                 <Jumbotron message="WELCOME" pic="homePic" />
                 <Container>
                 <div className="display-linebreak">
-                <h4>Testing home</h4>
+                <h4>Testing home </h4>
                 <p>
                     {"1. For the letter grade column, put in your letter grade(A through F)\n" +
                         "2. For the credits column put how many credits its worth\n" +

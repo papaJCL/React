@@ -17,6 +17,8 @@ const Styles = styled.div`
     height: 200px;
     position: relative;
     z-index: -2;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
   }
   .gpaPic {
     background: url(${gpaPic}) no-repeat bottom;
@@ -25,6 +27,8 @@ const Styles = styled.div`
     height: 200px;
     position: relative;
     z-index: -2;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
   }.tripPic {
     background: url(${tripPic}) no-repeat bottom;
     background-size: cover;
@@ -32,6 +36,8 @@ const Styles = styled.div`
     height: 200px;
     position: relative;
     z-index: -2;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
   }.workingOnPic {
     background: url(${workingOnPic}) no-repeat bottom;
     background-size: cover;
@@ -39,6 +45,8 @@ const Styles = styled.div`
     height: 200px;
     position: relative;
     z-index: -2;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
   }
   .overlay {
     background-color: black;
@@ -49,18 +57,20 @@ const Styles = styled.div`
     bottom: 0;
     right: 0;
     z-index: -1;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
   }
 `;
 
-export const Jumbotron = ({message , pic}) => (
-    
-    <Styles>
-      <Jumbo fluid className={pic}>
-        <div className="overlay"></div>
-        <Container>
-          <h1>{message}</h1>
-        </Container>
-      </Jumbo>
-      </Styles>
-     
-  )
+export const Jumbotron = ({ message, pic }) => (
+
+  <Styles>
+    <Jumbo fluid className={pic}>
+      <div className="overlay"></div>
+      <Container>
+      <h2 class="w3-wide w3-center">{message}</h2>
+      </Container>
+    </Jumbo>
+  </Styles>
+
+)

@@ -1,8 +1,45 @@
 import React, { Component } from 'react';
 import { Input } from 'reactstrap'
-import { Row, Col, Card, Button, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import Swal from 'sweetalert2'
+import '../node_modules/@sweetalert2/theme-dark';
 import { Jumbotron } from './components/Jumbotron';
+import styled from 'styled-components';
+
+
+const Button = styled.button`
+    background: transparent;
+    border-radius: 6px;
+    border: 2px solid #bbb;
+    color: #bbb;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    &:hover {
+        color: white;
+      }
+`;
+
+const Styles = styled.div`
+    .form-control:focus {
+        border-color: grey;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px grey;
+    }
+    input[type=text] {
+        background-color: #222;
+        color: #bbb;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        
+    }
+`;
+
+
+
+
 
 
 
@@ -13,6 +50,8 @@ class GPA extends Component {
         this.calculateGPA = this.calculateGPA.bind(this)
         this.handleGradeChange = this.handleGradeChange.bind(this)
         this.handleCreditChange = this.handleCreditChange.bind(this)
+        this.resetGradesCredits = this.resetGradesCredits.bind(this);
+
 
         this.state = {
             grade1: '', credit1: '',
@@ -21,19 +60,66 @@ class GPA extends Component {
             grade4: '', credit4: '',
             grade5: '', credit5: '',
             grade6: '', credit6: '',
-            finalAnswer: null,
         }
     }
 
+
+
     showErrorBox() {
+        console.log("landed on error boxx")
         return (
             Swal.fire({
                 title: 'Error!',
-                text: "One or more of the inputs is formatted incorrectly, make sure the grade is letter A through F and credits is an integer",
+                text: "One or more of the inputs is formatted incorrectly, make sure the grade is letter A through F and credits is a number",
                 icon: 'error',
-                confirmButtonText: 'Retry'
+                cancelButtonText: 'Retry',
+                showCancelButton: true,
+                showConfirmButton: false,
             })
         );
+    }
+
+    returnAnswerString(answer) {
+        answer = answer.toFixed(2)
+        if (answer >= 3.0) {
+            return [("Impressive! \nYour GPA is"), ("Congrats you're doing great!"), ('success')]
+        }
+        else if (answer > 2.5 && answer < 3.0) {
+            return [("Not bad! \nYour GPA is"), ("Keep studying and bump it up!"), ('warning')]
+        }
+        else if (answer <= 2.5) {
+            return [("Keep working hard!\n Your GPA is"), ("Your GPA is quite low but keep trying!"), ('error')]
+        }
+    }
+
+    showAnswerBox(answer) {
+        let message = this.returnAnswerString(answer);
+        return (
+            Swal.fire({
+                title: message[0],
+                footer: message[1],
+                text: answer.toFixed(2),
+                showCloseButton: true,
+                icon: message[2],
+                cancelButtonText: 'Back',
+                showCancelButton: true,
+                showConfirmButton: false,
+            })
+        );
+    }
+
+    resetGradesCredits() {
+        this.setState({
+            grade1: '', credit1: '',
+            grade2: '', credit2: '',
+            grade3: '', credit3: '',
+            grade4: '', credit4: '',
+            grade5: '', credit5: '',
+            grade6: '', credit6: '',
+        }, () => {
+            console.log("landed after state");
+            console.log(this.state);
+        });
     }
 
     checkIfValidGrade(gradeArray) {
@@ -106,8 +192,10 @@ class GPA extends Component {
         credits = this.checkIfValidCredits(credits);
         finalAnswer = this.getCalculation(grades, credits);
 
+        console.log("final answer reeeee", finalAnswer)
+
         if (!isNaN(finalAnswer)) {
-            this.props.setFinalAnswerState(finalAnswer);
+            this.showAnswerBox(finalAnswer);
         }
 
     }
@@ -126,30 +214,30 @@ class GPA extends Component {
 
     renderFormRow(grade, credit) {
         return (
-            <Container>
-                <Row className="justify-content-md-center">
-                    <Col xs lg="5" >
+            <Row >
+                <Col  >
+                    <Styles>
                         <Input bsSize="sm" name={grade} placeholder={"Letter Grade(A-F)"} onChange={(e) => this.handleGradeChange(grade, e)} />
-                    </Col >
-                    <Col xs lg="5" >
+                    </Styles>
+                </Col >
+                <Col  >
+                    <Styles>
                         <Input bsSize="sm" name={credit} placeholder={"Credits"} onChange={(e) => this.handleCreditChange(credit, e)} />
-                    </Col>
-                </Row>
-            </Container>
+                    </Styles>
+                </Col>
+            </Row>
         )
     }
 
     explainCard() {
         return (
             <div className="display-linebreak">
-                <Card className="card border-0">
-                    <Card.Text>
-                        <p>{"For the letter grade column, put in your letter grade(A through F)\n" +
-                            "For the credits column put how many credits its worth\n" +
-                            "Leave the rest of the rows blank once you've put all your classes in\n" +
-                            "Press Calculate when done"}</p>
-                    </Card.Text>
-                </Card>
+                <p>
+                    {"For the letter grade column, put in your letter grade(A through F)\n" +
+                        "For the credits column put how many credits its worth\n" +
+                        "Leave the rest of the rows blank once you've put all your classes in\n" +
+                        "Press Calculate when done"}
+                </p>
             </div>
         );
     }
@@ -164,13 +252,13 @@ class GPA extends Component {
                 {this.renderFormRow("grade5", "credit5")}
                 {this.renderFormRow("grade6", "credit6")}
                 <br />
-                <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
+                    <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
+                    <Button size="sm" onClick={this.resetGradesCredits} >Reset</Button>
             </div>
         );
     }
 
     render() {
-        if (this.props.finalGpaAnswer == null) {
             return (
                 <div >
                     <Jumbotron message="GPA Calculator" pic="gpaPic" />
@@ -181,18 +269,6 @@ class GPA extends Component {
                     </Container>
                 </div>
             )
-        }
-        else if (this.props.finalGpaAnswer != null) {
-            return (
-                <div>
-                    <Jumbotron message="GPA Answer" pic="gpaPic" />
-                    <Container>
-                        <h1>{this.props.finalGpaAnswer}</h1>
-                        <Button size="sm" onClick={this.props.resetGPAState} >Reset</Button>
-                    </Container>
-                </div>
-            )
-        }
     }
 
 }

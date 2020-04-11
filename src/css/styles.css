@@ -1,9 +1,23 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: "Lato", sans-serif;
+    background-color:black;
   }
 
+  .bg-text {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 80%;
+    padding: 20px;
+  }
+
+ 
 
   
   /* .backOverlay{
@@ -37,7 +51,7 @@ body {
 }
 
 p {
-    color: grey;
+    color: white;
     font-weight: 300;
   }
 

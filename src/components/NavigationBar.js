@@ -20,32 +20,32 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
   <Styles>
-  <Navbar expand="lg" bg="text-secondary">
-    <Navbar.Brand href="/index.html">Muh Brand</Navbar.Brand>
-    <Navbar.Toggle />
-    <Navbar.Collapse >
-      <Nav  bg="text-secondary" className="ml-auto">
-      <Nav.Item>
-          <Nav.Link>
-            <Link to="/Home">Home</Link>
-          </Nav.Link>
-        </Nav.Item><Nav.Item>
-          <Nav.Link>
-            <Link to="/GPA">GPA-Calculator</Link>
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link>
-            <Link to="/Trip">Plan Your Trip</Link>
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link>
-            <Link to="/ToDo">Working On</Link>
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
+    <Navbar collapseOnSelect expand="lg" variant="dark" >
+      <Navbar.Brand href="/index.html">Muh Brand</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav" >
+        <Nav className="ml-auto">
+          <Nav.Item>
+            <Nav.Link eventKey="1">
+              <Link to="/Home">Home</Link>
+            </Nav.Link>
+          </Nav.Item><Nav.Item>
+            <Nav.Link eventKey="2">
+              <Link to="/GPA">GPA-Calculator</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="3">
+              <Link to="/Trip">Plan Your Trip</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="4">
+              <Link to="/ToDo">Working On</Link>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   </Styles>
 )

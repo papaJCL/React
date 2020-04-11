@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Lato", sans-serif;
-    background-color:black;
+    background-color:#070707;
   }
 
   .bg-text {
@@ -52,7 +52,16 @@ body {
 
 p {
     color: white;
-    font-weight: 300;
+    /* font-weight: 300; */
+    /* font-size: 22px; */
   }
+
+h2{
+  
+}
+
+h4{
+  color: white;
+}
 
 

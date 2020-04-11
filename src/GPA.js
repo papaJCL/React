@@ -232,11 +232,12 @@ class GPA extends Component {
     explainCard() {
         return (
             <div className="display-linebreak">
+                <h4>Instructions</h4>
                 <p>
-                    {"For the letter grade column, put in your letter grade(A through F)\n" +
-                        "For the credits column put how many credits its worth\n" +
-                        "Leave the rest of the rows blank once you've put all your classes in\n" +
-                        "Press Calculate when done"}
+                    {"1. For the letter grade column, put in your letter grade(A through F)\n" +
+                        "2. For the credits column put how many credits its worth\n" +
+                        "3. Leave the rest of the rows blank once you've put all your classes in\n" +
+                        "4. Press Calculate when done"}
                 </p>
             </div>
         );
@@ -252,8 +253,10 @@ class GPA extends Component {
                 {this.renderFormRow("grade5", "credit5")}
                 {this.renderFormRow("grade6", "credit6")}
                 <br />
+                <center>    
                     <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
                     <Button size="sm" onClick={this.resetGradesCredits} >Reset</Button>
+                </center>
             </div>
         );
     }
@@ -261,7 +264,7 @@ class GPA extends Component {
     render() {
             return (
                 <div >
-                    <Jumbotron message="GPA Calculator" pic="gpaPic" />
+                    <Jumbotron message="GPA CALCULATOR" pic="gpaPic" />
                     <Container>
                         {this.explainCard()}
                         <br />

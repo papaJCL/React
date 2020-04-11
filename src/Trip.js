@@ -16,7 +16,7 @@ class Trip extends Component {
     render() {
         return (
             <div>
-                <Jumbotron message="Plan Your Trip" pic="tripPic"/>
+                <Jumbotron message="PLAN YOUR TRIP" pic="tripPic"/>
                 <Container>
                 <Card.Title>Plan Your Trip Website</Card.Title>
                 <Card.Img thumbnail variant="top" height="300px" src="https://i.gyazo.com/2e0d0c040598f7ff0ebd6605a976014b.gif" />

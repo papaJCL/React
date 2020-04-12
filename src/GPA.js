@@ -7,6 +7,7 @@ import { Jumbotron } from './components/Jumbotron';
 import styled from 'styled-components';
 
 
+
 const Button = styled.button`
     background: transparent;
     border-radius: 6px;
@@ -50,7 +51,7 @@ class GPA extends Component {
         this.calculateGPA = this.calculateGPA.bind(this)
         this.handleGradeChange = this.handleGradeChange.bind(this)
         this.handleCreditChange = this.handleCreditChange.bind(this)
-        this.resetGradesCredits = this.resetGradesCredits.bind(this);
+        this.resetToBaseState = this.resetToBaseState.bind(this);
 
 
         this.state = {
@@ -61,12 +62,14 @@ class GPA extends Component {
             grade5: '', credit5: '',
             grade6: '', credit6: '',
         }
+
+        this.baseState = this.state;
     }
 
 
 
     showErrorBox() {
-        console.log("landed on error boxx")
+        console.log("Landed on error")
         return (
             Swal.fire({
                 title: 'Error!',
@@ -75,8 +78,12 @@ class GPA extends Component {
                 cancelButtonText: 'Retry',
                 showCancelButton: true,
                 showConfirmButton: false,
-            })
+                })
         );
+    }
+
+    resetToBaseState() {
+        this.setState(this.baseState);
     }
 
     returnAnswerString(answer) {
@@ -99,7 +106,6 @@ class GPA extends Component {
                 title: message[0],
                 footer: message[1],
                 text: answer.toFixed(2),
-                showCloseButton: true,
                 icon: message[2],
                 cancelButtonText: 'Back',
                 showCancelButton: true,
@@ -108,19 +114,6 @@ class GPA extends Component {
         );
     }
 
-    resetGradesCredits() {
-        this.setState({
-            grade1: '', credit1: '',
-            grade2: '', credit2: '',
-            grade3: '', credit3: '',
-            grade4: '', credit4: '',
-            grade5: '', credit5: '',
-            grade6: '', credit6: '',
-        }, () => {
-            console.log("landed after state");
-            console.log(this.state);
-        });
-    }
 
     checkIfValidGrade(gradeArray) {
         let newGrades = []
@@ -131,6 +124,7 @@ class GPA extends Component {
             }
             else if (s.length != 0) {
                 this.showErrorBox();
+                return;
             }
         }
         return newGrades;
@@ -145,6 +139,7 @@ class GPA extends Component {
             }
             else if (creditArray[i].length != 0) {
                 this.showErrorBox();
+                return;
             }
         }
         return newCredits;
@@ -190,14 +185,12 @@ class GPA extends Component {
         })
         grades = this.checkIfValidGrade(grades);
         credits = this.checkIfValidCredits(credits);
-        finalAnswer = this.getCalculation(grades, credits);
-
-        console.log("final answer reeeee", finalAnswer)
-
-        if (!isNaN(finalAnswer)) {
-            this.showAnswerBox(finalAnswer);
+        if (grades !== undefined && credits !== undefined){
+            finalAnswer = this.getCalculation(grades, credits);
+            if (!isNaN(finalAnswer)) {
+                this.showAnswerBox(finalAnswer);
+            }
         }
-
     }
 
     handleGradeChange(grade, e) {
@@ -210,23 +203,6 @@ class GPA extends Component {
         this.setState({
             [credit]: e.target.value,
         });
-    }
-
-    renderFormRow(grade, credit) {
-        return (
-            <Row >
-                <Col  >
-                    <Styles>
-                        <Input bsSize="sm" name={grade} placeholder={"Letter Grade(A-F)"} onChange={(e) => this.handleGradeChange(grade, e)} />
-                    </Styles>
-                </Col >
-                <Col  >
-                    <Styles>
-                        <Input bsSize="sm" name={credit} placeholder={"Credits"} onChange={(e) => this.handleCreditChange(credit, e)} />
-                    </Styles>
-                </Col>
-            </Row>
-        )
     }
 
     explainCard() {
@@ -243,6 +219,23 @@ class GPA extends Component {
         );
     }
 
+    renderFormRow(grade, credit) {
+        return (
+            <Row >
+                <Col  >
+                    <Styles>
+                        <Input name={grade} placeholder={"Letter Grade(A-F)"} value={this.state[grade]} onChange={(e) => this.handleGradeChange(grade, e)} />
+                    </Styles>
+                </Col >
+                <Col  >
+                    <Styles>
+                        <Input name={credit} placeholder={"Credits"} value={this.state[credit]} onChange={(e) => this.handleCreditChange(credit, e)} />
+                    </Styles>
+                </Col>
+            </Row>
+        )
+    }
+
     renderInputs() {
         return (
             <div >
@@ -253,25 +246,27 @@ class GPA extends Component {
                 {this.renderFormRow("grade5", "credit5")}
                 {this.renderFormRow("grade6", "credit6")}
                 <br />
-                <center>    
-                    <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
-                    <Button size="sm" onClick={this.resetGradesCredits} >Reset</Button>
+                <center>
+                    <Row >
+                        <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
+                        <Button type="reset" size="sm" onClick={this.resetToBaseState} >Reset</Button>
+                    </Row>
                 </center>
             </div>
         );
     }
 
     render() {
-            return (
-                <div >
-                    <Jumbotron message="GPA CALCULATOR" pic="gpaPic" />
-                    <Container>
-                        {this.explainCard()}
-                        <br />
-                        {this.renderInputs()}
-                    </Container>
-                </div>
-            )
+        return (
+            <div >
+                <Jumbotron message="GPA CALCULATOR" pic="gpaPic" />
+                <Container>
+                    {this.explainCard()}
+                    <br />
+                    {this.renderInputs()}
+                </Container>
+            </div>
+        )
     }
 
 }

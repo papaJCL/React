@@ -67,7 +67,7 @@ export const Jumbotron = ({ message, pic }) => (
     <Jumbo fluid className={pic}>
       <div className="overlay"></div>
       <Container>
-      <h2 class="w3-wide ">{message}</h2>
+      <h2 className="w3-wide ">{message}</h2>
       </Container>
     </Jumbo>
   </Styles>

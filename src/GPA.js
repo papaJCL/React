@@ -208,12 +208,15 @@ class GPA extends Component {
     explainCard() {
         return (
             <div className="display-linebreak">
-                <h4>Instructions</h4>
-                <p>
-                    {"1. For the letter grade column, put in your letter grade(A through F)\n" +
+                <h4 className="w3">INSTRUCTIONS</h4>
+                <div className="hr" />
+                <p className="w3-text-grey">
+                {/* <em> */}
+                    {   "1. For the letter grade column, put in your letter grade(A through F)\n" +
                         "2. For the credits column put how many credits its worth\n" +
                         "3. Leave the rest of the rows blank once you've put all your classes in\n" +
                         "4. Press Calculate when done"}
+                {/* </em> */}
                 </p>
             </div>
         );

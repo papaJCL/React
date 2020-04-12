@@ -21,6 +21,10 @@ const Button = styled.button`
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     &:hover {
         color: white;
+    },
+    .btn:focus, .btn:active {
+        outline: none !important;
+        box-shadow: none !important;
       }
 `;
 
@@ -30,9 +34,9 @@ const Styles = styled.div`
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px grey;
     }
     input[type=text] {
-        background-color: #222;
-        color: #bbb;
-        border: 1px solid #fff;
+        background-color: white;
+        color: #black;
+        border: 1px solid grey;
         border-radius: 4px;
         
     }
@@ -211,12 +215,10 @@ class GPA extends Component {
                 <h4 className="w3">INSTRUCTIONS</h4>
                 <div className="hr" />
                 <p className="w3-text-grey">
-                {/* <em> */}
                     {   "1. For the letter grade column, put in your letter grade(A through F)\n" +
                         "2. For the credits column put how many credits its worth\n" +
                         "3. Leave the rest of the rows blank once you've put all your classes in\n" +
                         "4. Press Calculate when done"}
-                {/* </em> */}
                 </p>
             </div>
         );
@@ -251,8 +253,8 @@ class GPA extends Component {
                 <br />
                 <center>
                     <Row >
-                        <Button size="sm" onClick={this.calculateGPA} >Calculate</Button>
-                        <Button type="reset" size="sm" onClick={this.resetToBaseState} >Reset</Button>
+                        <Button  className="btn-block"  onClick={this.calculateGPA} >Calculate</Button>
+                        <Button  className="btn-block" onClick={this.resetToBaseState} >Reset</Button>
                     </Row>
                 </center>
             </div>

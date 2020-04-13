@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GPA from './GPA.js'
 import Home from './Home.js'
+import Intro from './Intro.js'
 import ToDo from './ToDo.js'
 import Trip from './Trip.js'
 import { NavigationBar } from './components/NavigationBar';
@@ -34,8 +35,8 @@ class App extends Component {
         <Router>
           <NavigationBar />
             <Switch>
-              <Route exact path="/index.html" component={Home} />
-              <Route exact path="/" component={Home} />
+              <Route exact path="/index.html" component={Intro} />
+              <Route exact path="/" component={Intro} />
               <Route path="/GPA"
                 render={() => (<GPA
                   finalGpaAnswer={this.state.finalGpaAnswer}

@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 class Home extends Component {
     render() {
         return (
-            <div>
+            <div >
                 <Jumbotron message="WELCOME" pic="homePic" />
                 <Container>
                 <div className="display-linebreak">

@@ -13,7 +13,7 @@ const Button = styled.button`
     border-radius: 6px;
     border: 2px solid #bbb;
     color: #bbb;
-    margin: 0.5em 1em;
+    margin: 0.1em 1em;
     padding: 0.25em 1em;
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s; 

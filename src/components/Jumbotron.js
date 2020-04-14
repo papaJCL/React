@@ -48,24 +48,13 @@ const Styles = styled.div`
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
-  .overlay {
-    background-color: black;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    
-  }
 `;
 
 export const Jumbotron = ({ message, pic }) => (
 
   <Styles>
     <Jumbo fluid className={pic}>
-      <div className="overlay"></div>
+      <div className="overlay"/>
       <Container className = "container-fluid">
       <h1 className="w3-xxlarge w3-wide w3-center ">{message}</h1>
       </Container>

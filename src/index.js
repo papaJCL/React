@@ -4,7 +4,7 @@ import App from './App';
 import Intro from './Intro'
 
 
-ReactDOM.render(<App /> , document.getElementById('root'));
+ReactDOM.render(<Intro /> , document.getElementById('root'));
 
 
 

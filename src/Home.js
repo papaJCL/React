@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Jumbotron } from './components/Jumbotron';
 import { Container } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
 
 
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         return (
             <div >

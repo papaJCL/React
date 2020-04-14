@@ -7,7 +7,7 @@ import Trip from './Trip.js'
 import { NavigationBar } from './components/NavigationBar';
 import { Layout } from './components/Layout'
 import { NoMatch } from './NoMatch';
-import { BrowserRouter  as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter  as Router, Route, Switch, Redirect  } from 'react-router-dom';
 import './css/styles.css';
 
 
@@ -35,7 +35,7 @@ class App extends Component {
         <Router>
           <NavigationBar />
             <Switch>
-              <Route exact path="/index.html" component={Intro} />
+              <Route exact path="/index.html" component={Home} />
               <Route exact path="/" component={Intro} />
               <Route path="/GPA"
                 render={() => (<GPA
@@ -46,7 +46,7 @@ class App extends Component {
               <Route path="/ToDo" component={ToDo} />
               <Route path="/Home" component={Home} />
               <Route path="/Trip" component={Trip} />
-              <Route component={NoMatch} />
+              <Route component={Home} />
             </Switch>
         </Router>
       </div>

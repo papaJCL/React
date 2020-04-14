@@ -53,6 +53,8 @@ const Styles = styled.div`
 export const Jumbotron = ({ message, pic }) => (
 
   <Styles>
+    <br />
+    <br />
     <Jumbo fluid className={pic}>
       <div className="overlay"/>
       <Container className = "container-fluid">

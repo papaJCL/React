@@ -38,7 +38,7 @@ class Intro extends Component {
             <div className="introBG" >
                 <div className="overlay" />
                 <div className="w3-display-middle bg-text">
-                    <h1 className="w3-jumbo  w3-center  w3-text-white w3-wide">{this.textFunction()}</h1>
+                    <h1 className="w3-center  w3-text-white w3-wide">{this.textFunction()}</h1>
                     <div className="big-hr" />
                     <br/>
                     <p className="w3-large w3-center">{this.goToButton()}</p>
@@ -51,7 +51,7 @@ class Intro extends Component {
     goToButton(){
         return(
             <Button onClick={this.loadWebsite}>
-                PROCEED TO SITE 
+                ENTER 
             </Button>
         )
     }

@@ -61,15 +61,18 @@ class Trip extends Component {
                                     "There are other small functions that this website can do such as adding custom locations, calculate distance\n" + 
                                      "between locations, calculate total distance, save itinerary as either a JSON,CSV, KML file, filtering for itinerary and more!\n"}
                             </p>
-                            <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
+                            <a href="https://github.com/papaJCL/React/blob/master/JSON%20examples/coloradobrews.json"
+                            target="_blank"
                             title="JSON Example 1">JSON 1
                             </a>
-                        <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
-                            title="JSON example 2">JSON 2
+                            <br/>
+                        <a href="https://github.com/papaJCL/React/blob/master/JSON%20examples/worldbrews.json"
+                            target="_blank" title="JSON example 2">JSON 2
                             </a>
                         </div>
                         <h1 className="w3-center">
                             <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
+                            target="_blank"
                                 title="Go to Plan Your Trip Website">CLICK HERE
                             </a>
                         </h1>

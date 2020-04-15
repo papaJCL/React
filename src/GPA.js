@@ -263,7 +263,7 @@ class GPA extends Component {
 
     render() {
         return (
-            <div className="mainBG" >
+            <div>
                 <Jumbotron message="GPA CALCULATOR" pic="gpaPic" />
                 <Container>
                     {this.explainCard()}

@@ -1,33 +1,80 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
 import { Jumbotron } from './components/Jumbotron';
 import { Container } from 'react-bootstrap';
+import styled from 'styled-components';
 
+const Styles = styled.div`
 
+/* unvisited link */
+    a:link {
+        color: #bbb;
+    }
 
+/* visited link */
+    a:visited {
+        color: #bbb;
+    }
+
+/* mouse over link */
+    a:hover {
+        color: white;
+    }
+
+    /* selected link */
+    a:active {
+        color: #bbb;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+      
+    a:visited {
+        text-decoration: none;
+    }
+      
+    a:hover {
+        text-decoration: none;
+    }
+      
+    a:active {
+        text-decoration: none;
+    }
+`
 
 class Trip extends Component {
-
-    openInNewTab() {
-        var win = window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", '_blank');
-        return (win)
-    }
 
     render() {
         return (
             <div>
-                <Jumbotron message="PLAN YOUR TRIP" pic="tripPic"/>
-                <Container>
-                <Card.Title>Plan Your Trip Website</Card.Title>
-                <Card.Img thumbnail variant="top" height="300px" src="https://i.gyazo.com/2e0d0c040598f7ff0ebd6605a976014b.gif" />
-                <Card.Body>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                    <Button variant="outline-secondary" onClick={this.openInNewTab}>Go to site</Button>
-                </Card.Body>
-                </Container>
+                <Styles>
+                    <Jumbotron message="PLAN YOUR TRIP" pic="tripPic" />
+                    <Container>
+                        <h4 className="w3">HOW TO USE THE SITE</h4>
+                        <div className="hr" />
+                        <div className="display-linebreak">
+                            <p className="w3-text-grey">
+                                {"The site has many different capabilities and functions.\n The basic premise being " +
+                                    "that you can get/search for locations and add them to the itinerary. \n" +
+                                    "Once your itinerary is filled to your liking, you can then choose sorting algorithms to make your trip the shortest\n" +
+                                    "Additionally, you can just upload the trip from a JSON file(examples below).\n" + 
+                                    "There are other small functions that this website can do such as adding custom locations, calculate distance\n" + 
+                                     "between locations, calculate total distance, save itinerary as either a JSON,CSV, KML file, filtering for itinerary and more!\n"}
+                            </p>
+                            <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
+                            title="JSON Example 1">JSON 1
+                            </a>
+                        <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
+                            title="JSON example 2">JSON 2
+                            </a>
+                        </div>
+                        <h1 className="w3-center">
+                            <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
+                                title="Go to Plan Your Trip Website">CLICK HERE
+                            </a>
+                        </h1>
+                    </Container>
+                </Styles>
             </div>
         )
     }

@@ -54,6 +54,8 @@ const Styles = styled.div`
 
 
 export const NavigationBar = () => (
+
+  
   <Styles>
     <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand href="/index.html">JEREMY</Navbar.Brand>

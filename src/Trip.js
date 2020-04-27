@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Jumbotron } from './components/Jumbotron';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
+import "../node_modules/video-react/dist/video-react.css"; 
+
 
 const Styles = styled.div`
 
@@ -70,12 +72,15 @@ class Trip extends Component {
                             target="_blank" title="JSON example 2">JSON 2
                             </a>
                         </div>
+                        <br/>
+                        <br/>
                         <h1 className="w3-center">
                             <a href="http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/"
                             target="_blank"
                                 title="Go to Plan Your Trip Website">CLICK HERE
                             </a>
                         </h1>
+                        
                     </Container>
                 </Styles>
             </div>

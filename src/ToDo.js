@@ -1,16 +1,54 @@
 import React, { Component } from 'react';
 import { Jumbotron } from './components/Jumbotron';
 import { Container } from 'react-bootstrap';
+import Cards from './covid/Cards/Cards'
+import Countries from './covid/Countries/Countries'
+import Chart from './covid/Chart/Chart'
+import { getData } from './covid/api/'
 
 
 class ToDo extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {} , 
+            country: '',
+        }
+
+    }
+
+    async componentDidMount() {
+        const data = await getData();
+        this.setState({ data: data });
+    }
+
+    setCountry = async (country) => {
+        const fetchedCountries = await getData(country);
+        this.setState({data: fetchedCountries, country: country });
+    }
+
+    returnTitle(){
+        if (this.state.country.length == 0){
+            return ("GLOBAL STATS")
+        }
+        else{
+            return (this.state.country.toUpperCase() + " STATS")
+        }
+    }
+
     render() {
         return (
             <div>
-            <Jumbotron message="WHAT I'M CURRENTLY WORKING ON" pic="workingOnPic"/>
-            <Container>
-                <p>Stare at ceiling lay on arms while you're using the keyboard so this human feeds me, i should be a god wack the mini furry mouse but all of a sudden cat goes crazy get suspicious of own shadow then go play with toilette paper. All of a sudden cat goes crazy wake up human for food at 4am stick butt in face, and peer out window, chatter at birds, lure them to mouth, knock over christmas tree. Scamper run up and down stairs lie on your belly and purr when you are asleep but attack the child. Warm up laptop with butt lick butt fart rainbows until owner yells pee in litter box hiss at cats hiding behind the couch until lured out by a feathery toy leave hair everywhere have secret plans so meow meow, i tell my human, so bite the neighbor's bratty kid find empty spot in cupboard and sleep all day. Need to chase tail wake up human for food at 4am. Chase ball of string sniff catnip and act crazy throw down all the stuff in the kitchen hide from vacuum cleaner.</p>
-            </Container>
+                <Jumbotron message="COVID TRACKER" pic="workingOnPic" />
+                <Container>
+                    <h4 className="w3">{this.returnTitle()}</h4>
+                    <div className="hr" />
+                    <p className="w3-text-grey"><i>Last update:  </i>{new Date(this.state.data.lastUpdate).toDateString()}</p>
+                    <Cards data={this.state.data} />
+                    <Countries setCountry={this.setCountry} />
+                    <Chart data={this.state.data} country={this.state.country} />
+                </Container>
             </div>
         )
     }

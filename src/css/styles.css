@@ -117,12 +117,12 @@ h4{
 .graphStyles{
   display: flex;
   justify-content: center;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .barBraph{
   background-color: white;
-  color: pink;
+  color: green;
   outline: none;
 }
 

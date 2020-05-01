@@ -29,12 +29,25 @@ class ToDo extends Component {
     }
 
     returnTitle(){
+        console.log("this.state.country " , this.state.country)
         if (this.state.country.length == 0){
             return ("GLOBAL STATS")
         }
         else{
+            // console.log("Landed here " , this.state.country.toUpperCase())
             return (this.state.country.toUpperCase() + " STATS")
         }
+    }
+
+    renderUpdatedInfo(){
+        return(
+        <p className="w3-text-grey">
+        {   "1. For the letter grade column, put in your letter grade(A through F)\n" +
+            "2. For the credits column put how many credits its worth\n" +
+            "3. Leave the rest of the rows blank once you've put all your classes in\n" +
+            "4. Press Calculate when done"}
+        </p>
+        )
     }
 
     render() {
@@ -43,10 +56,11 @@ class ToDo extends Component {
                 <Jumbotron message="COVID TRACKER" pic="workingOnPic" />
                 <Container>
                     <h4 className="w3">{this.returnTitle()}</h4>
-                    <div className="hr" />
                     <p className="w3-text-grey"><i>Last update:  </i>{new Date(this.state.data.lastUpdate).toDateString()}</p>
-                    <Cards data={this.state.data} />
+                    <div className="hr" />
+                    <br/>
                     <Countries setCountry={this.setCountry} />
+                    {<Cards data={this.state.data} />}
                     <Chart data={this.state.data} country={this.state.country} />
                 </Container>
             </div>

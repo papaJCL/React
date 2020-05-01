@@ -7,7 +7,7 @@ const url = "https://covid19.mathdro.id/api"
 export const getData = async (country) => {
     let changeURL = url;
 
-    if (country && country!="global"){
+    if (country && country!="global" ){
         changeURL = `${url}/countries/${country}`
     }
 
@@ -46,7 +46,6 @@ export const fetchDaily = async () => {
 export const fetchCountries = async () => {
     try {
         const {data:{countries}} = await axios.get(`${url}/countries`)
-
        return countries.map((country) => country.name )
     } catch (e) {
         console.log(e)

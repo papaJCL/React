@@ -5,6 +5,7 @@ import "regenerator-runtime/runtime.js";
 const url = "https://covid19.mathdro.id/api"
 
 export const getData = async (country) => {
+
     let changeURL = url;
 
     if (country && country!="global" ){

@@ -8,13 +8,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         <div>
             <br />
             <p className="w3-text-grey w3-wide">{"DEATHS: "}
-                <CountUp className="w3-text-red" start={0} end={deaths.value} duration={1.5} separator="," />
+                <CountUp className="w3-text-red w3-normal numberText" start={0} end={deaths.value} duration={1.5} separator="," />
             </p>
             <p className="w3-text-grey w3-wide">{"RECOVERED: "}
-                <CountUp className="w3-text-green" start={0} end={recovered.value} duration={1.5} separator="," />
+                <CountUp className="w3-text-green  w3-normal numberText" start={0} end={recovered.value} duration={1.5} separator="," />
             </p>
             <p className="w3-text-grey w3-wide">{"CONFIRMED CASES: "}
-                <CountUp className="w3-text-blue" start={0} end={confirmed.value} duration={1.5} separator="," />
+                <CountUp className="w3-text-blue w3-normal numberText" start={0} end={confirmed.value} duration={1.5} separator="," />
             </p>
         </div>
     )

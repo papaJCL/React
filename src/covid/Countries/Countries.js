@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 
 
+
 import { fetchCountries } from '../api'
 
 const useStyles = makeStyles(({
@@ -15,24 +16,27 @@ const useStyles = makeStyles(({
         borderRadius: 3,
         border: 0,
         color: 'white',
-    } , 
+    },
     inputRoot: {
-      color: "#bbb",
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "black"
-      },
-      "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "black"
-      },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#222"
-      },
-      "&.MuiAutocomplete-hasClearIcon" : {
-        borderColor: "green",
-        color: "green"
-      }
+        color: "#bbb",
+        "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black"
+        },
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#222"
+        },
+    },
+    clearIndicator: {
+        color: "#070707"
     }
-  }));
+}));
+
+
+
+
 
 const Countries = ({ setCountry }) => {
 
@@ -47,29 +51,32 @@ const Countries = ({ setCountry }) => {
         getCountries();
     }, [setGetCountries])
 
-    
+
 
 
     const work = () => {
         let test = getCountries.map((country, i) => country)
         var len = test.length;
-        for (var i = 1; i < len + 1 ; i++) {
+        for (var i = 1; i < len + 1; i++) {
             countries.push({
-                name: test[i -1]
+                name: test[i - 1]
             });
         }
     }
 
     const countries = [
-        {name: "Global"}
+        { name: "Global" }
     ]
 
-    const handleChange = (event , newValue) => {
-        setCountry(newValue.name.toLowerCase())
+    const handleChange = (event, newValue) => {
+        if (newValue == null){
+            setCountry("".toLowerCase())
+        }
+        else{
+            setCountry(newValue.name.toLowerCase())
+        }
     }
 
-   
-      
 
     return (
         <div >
@@ -79,10 +86,14 @@ const Countries = ({ setCountry }) => {
                 classes={classes}
                 options={countries}
                 getOptionLabel={(option) => option.name}
-                
-                renderInput={(params) => <TextField {...params}  variant="outlined" fullWidth 
-                />
-            }
+                renderInput={(params) => 
+                    <TextField
+                    {...params}
+                    placeholder="Search for a Country or Click One Below"
+                    variant="outlined" 
+                    fullWidth 
+                    />
+                }
             />
         </div>
     )

@@ -31,7 +31,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                         borderColor: 'red',
                         backgroundColor: 'rgba(255,0,0,0.2)',
                         fill: true,
-                    }],
+                    } 
+                  ],
                 }}
             />) : null
     );
@@ -40,14 +41,11 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
         confirmed ? (
           <Bar
             data={{
-              // labels: ['Infected', 'Recovered', 'Deaths'],
               labels: ['Deaths', 'Recovered', 'Infected'],
               datasets: [
                 {
                   label: 'People',
-                  // backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
                   backgroundColor: ['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(0, 0, 255, 0.5)'],
-                  // data: [confirmed.value, recovered.value, deaths.value],
                   data: [deaths.value, recovered.value, confirmed.value],
                 },
               ],
@@ -55,7 +53,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
             options={{
               legend: { display: false },
               title: { display: true, text: `Current state in ${country}` },
+              hover: {mode: null},
             }}
+            
           />
         ) : null
       );

@@ -81,7 +81,7 @@ export const NavigationBar = () => (
             {/* <NavDropdown.Divider /> */}
             <NavDropdown.Item>
               <Nav.Link eventKey="4">
-                <Link to="/ToDo">About Projects</Link>
+                <Link to="/ToDo">Covid-Tracker</Link>
               </Nav.Link>
             </NavDropdown.Item>
           </NavDropdown>

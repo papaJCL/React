@@ -11,38 +11,32 @@ import workingOnPic from '../Images/test3.jpg';
 
 const Styles = styled.div`
   .homePic {
-    background: url(${homePic}) no-repeat bottom;
-    background-size: cover;
-    color: #efefef;
-    height: 200px;
-    position: relative;
-    z-index: -2;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    background-color: #3a3a3a;
+    color: white;
   }
   .gpaPic {
-    background: url(${gpaPic}) no-repeat bottom;
+    background-color:#3a3a3a;
     background-size: cover;
     color: #efefef;
-    height: 200px;
+    height: auto;
     position: relative;
     z-index: -2;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }.tripPic {
-    background: url(${tripPic}) no-repeat bottom;
+    background-color:#3a3a3a;
     background-size: cover;
     color: #efefef;
-    height: 200px;
+    height: auto;
     position: relative;
     z-index: -2;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }.workingOnPic {
-    background: url(${workingOnPic}) no-repeat bottom;
+    background-color:#3a3a3a;
     background-size: cover;
     color: #efefef;
-    height: 200px;
+    height: auto;
     position: relative;
     z-index: -2;
     -webkit-filter: grayscale(100%);
@@ -53,13 +47,9 @@ const Styles = styled.div`
 export const Jumbotron = ({ message, pic }) => (
 
   <Styles>
-    <br />
-    <br />
-    <Jumbo fluid className={pic}>
-      <div className="overlay"/>
-      <Container className = "container-fluid">
-      <h1 className="w3-xxlarge w3-wide w3-center ">{message}</h1>
-      </Container>
+    <br/>
+    <Jumbo  className={pic}>
+      <h1 className="w3-xxlarge w3-wide w3-center w3-text-white ">{message}</h1>
     </Jumbo>
   </Styles>
 

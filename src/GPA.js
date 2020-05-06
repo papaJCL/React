@@ -9,16 +9,20 @@ import styled from 'styled-components';
 
 
 const Button = styled.button`
-    background: transparent;
-    border-radius: 6px;
-    border: 2px solid #bbb;
+    background: #222;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 6px;
     color: #bbb;
-    margin: 0.1em 1em;
-    padding: 0.25em 1em;
+    margin:20px
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size: 16px;
+    border-radius: 12px;
     &:hover {
         color: white;
     },
@@ -35,7 +39,9 @@ const Styles = styled.div`
     }
     input[type=text] {
         background-color: white;
-        color: #black;
+        color: black;
+        font-size: 25x;
+        font-weight: bold;
         border: 1px solid grey;
         border-radius: 4px;
         
@@ -82,7 +88,7 @@ class GPA extends Component {
                 cancelButtonText: 'Retry',
                 showCancelButton: true,
                 showConfirmButton: false,
-                })
+            })
         );
     }
 
@@ -189,7 +195,7 @@ class GPA extends Component {
         })
         grades = this.checkIfValidGrade(grades);
         credits = this.checkIfValidCredits(credits);
-        if (grades !== undefined && credits !== undefined){
+        if (grades !== undefined && credits !== undefined) {
             finalAnswer = this.getCalculation(grades, credits);
             if (!isNaN(finalAnswer)) {
                 this.showAnswerBox(finalAnswer);
@@ -215,7 +221,7 @@ class GPA extends Component {
                 <h4 className="w3">INSTRUCTIONS</h4>
                 <div className="hr" />
                 <p className="w3-text-grey">
-                    {   "1. For the letter grade column, put in your letter grade(A through F)\n" +
+                    {"1. For the letter grade column, put in your letter grade(A through F)\n" +
                         "2. For the credits column put how many credits its worth\n" +
                         "3. Leave the rest of the rows blank once you've put all your classes in\n" +
                         "4. Press Calculate when done"}
@@ -251,12 +257,17 @@ class GPA extends Component {
                 {this.renderFormRow("grade5", "credit5")}
                 {this.renderFormRow("grade6", "credit6")}
                 <br />
-                <center>
-                    <Row >
-                        <Button  className="btn-block"  onClick={this.calculateGPA} >Calculate</Button>
-                        <Button  className="btn-block" onClick={this.resetToBaseState} >Reset</Button>
-                    </Row>
-                </center>
+                <Button onClick={this.calculateGPA} >
+                    <div className="w3-opacity">
+                        <b>CALCULATE</b>
+                    </div>
+                </Button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Button onClick={this.resetToBaseState} >
+                    <div className="w3-opacity">
+                        <b>RESET</b>
+                    </div>
+                </Button>
             </div>
         );
     }

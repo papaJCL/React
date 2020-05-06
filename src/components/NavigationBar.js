@@ -6,12 +6,17 @@ import styled from 'styled-components';
 
 const Styles = styled.div`
   .navbar {
-    background-color: #222;
+    text-align: center;
+    background-color: #262626;
     margin-bottom: 0;
     border: 0;
-    font-size: 15px !important;
-    letter-spacing: 4px;
+    font-size: 18px !important;
+    letter-spacing: 2px;
     opacity: 1.0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
   }
   a, .navbar-brand, .navbar-nav .nav-link {
     color: #bbb;
@@ -49,39 +54,50 @@ const Styles = styled.div`
 .dropdown-menu a:hover {
   background-color: black !important;
 }
+
+.dropdown-toggle:after { content: none }
+
+
 `;
+
 
 
 
 export const NavigationBar = () => (
 
-  
+
   <Styles>
     <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark">
-      <Navbar.Brand href="/index.html">JEREMY</Navbar.Brand>
+      <Navbar.Brand href="/index.html"><i className="fa fa-home"></i> JEREMY</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" >
-        <Nav className="ml-auto">
+        <Nav className="ml-auto" >
           <Nav.Item>
             <Nav.Link eventKey="1">
-              <Link to="/Home">Home</Link>
+              <Link to="/Home"><i className="fa fa-user"></i> ABOUT</Link>
             </Nav.Link>
           </Nav.Item>
-          <NavDropdown title="Projects" id="basic-nav-dropdown">
+          <Nav.Item>
+            <Nav.Link eventKey="5">
+              <Link to="/Home"><i class="fa fa-info" ></i> PROJECT INFO         </Link>
+            </Nav.Link>
+          </Nav.Item>
+          <NavDropdown title={
+            <span><i className="fa fa-th"></i> PROJECTS</span>} id="basic-nav-dropdown">
             <NavDropdown.Item>
               <Nav.Link eventKey="2">
-                <Link to="/GPA">GPA-Calculator</Link>
+                <Link to="/GPA">GPA-CALCULATOR</Link>
               </Nav.Link>
             </NavDropdown.Item>
             <NavDropdown.Item>
               <Nav.Link eventKey="3">
-                <Link to="/Trip">Plan-Your-Trip</Link>
+                <Link to="/Trip">PLAN-YOUR-TRIP</Link>
               </Nav.Link>
             </NavDropdown.Item>
             {/* <NavDropdown.Divider /> */}
             <NavDropdown.Item>
               <Nav.Link eventKey="4">
-                <Link to="/ToDo">Covid-Tracker</Link>
+                <Link to="/ToDo">COVID-TRACKER</Link>
               </Nav.Link>
             </NavDropdown.Item>
           </NavDropdown>

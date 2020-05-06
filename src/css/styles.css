@@ -1,12 +1,13 @@
 body {
     height: 100%;
     font-family: 'Raleway', sans-serif;
-    background-color:#070707;
+    background-color: #0d0d0d;
+    /* background-color:#070707; */
     
   }
 
   .bg-text {
-    color: white;
+    color: #d9d9d9;
     font-weight: bold;
     position: absolute;
     top: 50%;
@@ -20,6 +21,7 @@ body {
   .swal2-popup .swal2-styled:focus {
     box-shadow: none !important;
 }
+
 
   .hr {
     -moz-border-bottom-colors: none;
@@ -92,15 +94,15 @@ body {
   
 }
 
-p {
-    color: white;
+p , h1, h2, h3, h4  {
+    color: #d9d9d9;
     /* font-weight: 400; */
     /* font-size: 22px; */
   }
 
 
 h4{
-  color: #bbb;
+  color: #d9d9d9;
 }
 
 .overlay {

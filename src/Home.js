@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Jumbotron } from './components/Jumbotron';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
+import aboutPic from './Images/about.jpg'
 
 
 
@@ -10,24 +11,43 @@ class Home extends Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <div >
-                <Jumbotron message="WELCOME" pic="homePic" />
+                <br /><br /><br />
                 <Container>
-                <div className="display-linebreak">
-                <h4>Testing home </h4>
-                <p>
-                    {"1. For the letter grade column, put in your letter grade(A through F)\n" +
-                        "2. For the credits column put how many credits its worth\n" +
-                        "3. Leave the rest of the rows blank once you've put all your classes in\n" +
-                        "4. Press Calculate when done"}
-                </p>
-            </div>
+                    <h3 className="w3-center">ABOUT ME</h3>
+                    <p className="w3-center"><em>I love photography</em></p>
+                    <p><i class="fa fa-user w3-margin-right"></i>Jeremy</p>
+                    <Row>
+                        <Col sm>
+                            <Card className="card text-center" style={{ backgroundColor: "#595959"}}>
+                            <Card.Img src={aboutPic} className="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" height="333px" />
+                            </Card>
+                        </Col>
+                        <Col sm >
+                            <Card className="card text-center" style={{ backgroundColor: "#595959"}}>
+                                <Card.Body>
+                                    <p>
+                                        I am a third-year Computer Science student and AROTC cadet at Colorado State University. My work experience before college involved network administration at our family's business. While this wasn't an arduous job, it is what got me interested in working on computers. When it came time to decided on a university, I decided to become a student at CSU due to its amazing Computer Science and ROTC programs, and have since gained many incredibly useful experiences and skills.
+                                </p>
+                                </Card.Body>
+                            </Card>
+                            <br/>
+                            <Card className="card text-center" style={{ backgroundColor: "#404040"}}>
+                                <Card.Title>Technologies</Card.Title>
+                                <Card.Body>
+                                    <p>
+                                        I am a third-year Computer Science student and AROTC cadet at Colorado State University. My work experience before college involved network administration at our family's business. While this wasn't an arduous job, it is what got me interested in working on computers. When it came time to decided on a university, I decided to become a student at CSU due to its amazing Computer Science and ROTC programs, and have since gained many incredibly useful experiences and skills.
+                                </p>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
-            
+
         )
     }
 }

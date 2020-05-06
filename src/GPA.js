@@ -41,7 +41,7 @@ const Styles = styled.div`
         background-color: white;
         color: black;
         font-size: 25x;
-        font-weight: bold;
+        
         border: 1px solid grey;
         border-radius: 4px;
         

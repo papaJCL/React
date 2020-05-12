@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
-import { Jumbotron } from './components/Jumbotron';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import ReactDOM from 'react-dom';
+import { Container, Row, Col, Card, CardDeck, CardGroup } from 'react-bootstrap';
 import aboutPic from './Images/about.jpg'
+import reactPic from './Images/react.png'
+import cssPic from './Images/css.png'
+import javaPic from './Images/java.png'
+import cPic from './Images/cplusplus.png'
+import typeScriptPic from './Images/typeScript.png'
+import gitPic from './Images/git.png'
+import mscPic from './Images/studio.png'
+import intelijiPic from './Images/intelliji.png'
+import jupPic from './Images/jup.png'
+import cProgPic from './Images/c.png'
+import mySQLPic from './Images/mysql.png'
+import pythonPic from './Images/python.png'
+
+
+
+
+
 
 
 
@@ -12,39 +27,183 @@ class Home extends Component {
         super(props);
     }
 
+    renderFirstRow() {
+        return (
+            <div>
+                <h3 className="w3-center">ABOUT ME</h3>
+                <p className="w3-center"><em>I am an enthusiastic software developer who enjoys building cool software and solving problems.</em></p>
+                <Row>
+                    <Col sm >
+                        <Card className="card text-center card border-0" style={{ backgroundColor: "#0d0d0d" }}>
+                            <div className="bigHover mx-auto">
+                                <Card.Img src={aboutPic} className="mx-auto w3-round cardHeight jeremyWidth" alt="Photo of Me" />
+                            </div>
+                        </Card>
+                    </Col>
+                    <Col sm >
+                        <Card className="card border-0" style={{ backgroundColor: "#595959", height: '500px' }}>
+                            <Card.Title className="card text-center" style={{ padding: '17px', backgroundColor: "#404040", color: "#bbb", height: '60px' }}> BACKGROUND </Card.Title>
+                            <Card.Body >
+                                <div className="display-linebreak">
+                                    <p>
+                                        {"1. For the letter grade column, put in your letter grade(A through F)\n" +
+                                            "2. For the credits column put how many credits its worth\n" +
+                                            "3. Leave the rest of the rows blank once you've put all your classes in\n" +
+                                            "4. Press Calculate when done"}
+                                    </p>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </div>
+        )
+    }
+
+    renderPrimaryLanguages() {
+        return (
+            <CardGroup>
+                <Card className="card text-center card border-0" style={{ backgroundColor: "#404040" }}>
+                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#595959", color: "#bbb", height: '60px' }}>PRIMARY LANGUAGES</Card.Title>
+                    <CardDeck>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={reactPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    React
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={cssPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    CSS
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={javaPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Java
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={cPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    C++
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto rounded-circle" variant="top" src={typeScriptPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Typescript
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </CardDeck>
+                </Card>
+            </CardGroup>
+        )
+    }
+
+    renderTools() {
+        return (
+            <CardGroup>
+                <Card className="card border-0 card text-center" style={{ backgroundColor: "#595959" }}>
+                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#262626", color: "#bbb", height: '60px' }}>TOOLS</Card.Title>
+                    <CardDeck>
+                        <Card className="card border-0" style={{ backgroundColor: "#595959" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={gitPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Git
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#595959" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={mscPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Visual Studio Code
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#595959" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={intelijiPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    IntelliJ
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#595959" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={jupPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Jupyter Notebooks
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </CardDeck>
+                </Card>
+            </CardGroup>
+        )
+    }
+
+    renderSecondaryLanguages() {
+        return (
+            <CardGroup>
+                <Card className="card border-0 card text-center" style={{ backgroundColor: "#202020" }}>
+                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#707070", color: "#bbb", height: '60px' }}>SECONDARY LANGUAGES</Card.Title>
+                    <CardDeck>
+                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={cProgPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    C
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={mySQLPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    MySQL
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                            <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={pythonPic} />
+                            <Card.Body>
+                                <Card.Text>
+                                    Python
+                                        </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </CardDeck>
+                </Card>
+            </CardGroup>
+        )
+    }
+
     render() {
         return (
             <div >
                 <br /><br /><br />
                 <Container>
-                    <h3 className="w3-center">ABOUT ME</h3>
-                    <p className="w3-center"><em>I love photography</em></p>
-                    <p><i class="fa fa-user w3-margin-right"></i>Jeremy</p>
-                    <Row>
-                        <Col sm>
-                            <Card className="card text-center" style={{ backgroundColor: "#595959"}}>
-                            <Card.Img src={aboutPic} className="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" height="333px" />
-                            </Card>
-                        </Col>
-                        <Col sm >
-                            <Card className="card text-center" style={{ backgroundColor: "#595959"}}>
-                                <Card.Body>
-                                    <p>
-                                        I am a third-year Computer Science student and AROTC cadet at Colorado State University. My work experience before college involved network administration at our family's business. While this wasn't an arduous job, it is what got me interested in working on computers. When it came time to decided on a university, I decided to become a student at CSU due to its amazing Computer Science and ROTC programs, and have since gained many incredibly useful experiences and skills.
-                                </p>
-                                </Card.Body>
-                            </Card>
-                            <br/>
-                            <Card className="card text-center" style={{ backgroundColor: "#404040"}}>
-                                <Card.Title>Technologies</Card.Title>
-                                <Card.Body>
-                                    <p>
-                                        I am a third-year Computer Science student and AROTC cadet at Colorado State University. My work experience before college involved network administration at our family's business. While this wasn't an arduous job, it is what got me interested in working on computers. When it came time to decided on a university, I decided to become a student at CSU due to its amazing Computer Science and ROTC programs, and have since gained many incredibly useful experiences and skills.
-                                </p>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
+                    {this.renderFirstRow()}
+                    <br />
+                    {this.renderPrimaryLanguages()}
+                    <br />
+                    {this.renderTools()}
+                    <br />
+                    {this.renderSecondaryLanguages()}
                 </Container>
             </div>
 

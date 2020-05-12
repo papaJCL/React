@@ -128,6 +128,45 @@ h4{
   outline: none;
 }
 
+
+.logoHeight{
+  height: 100px;
+  width: 125px;
+}
+
+.img-hover-zoom--basic  {
+  transition: transform .5s, filter 1.0s ease-in-out;
+}
+
+/* The Transformation */
+.img-hover-zoom--basic:hover {
+  transform: scale(1.1);
+}
+
+.cardHeight{ 
+  max-height: 500px;
+}
+
+.jeremyWidth{
+  max-width: 400px;
+}
+
+.bigHover{
+  overflow: hidden;
+}
+
+.bigHover img{
+  transition: transform .5s, filter 1.5s ease-in-out;
+  /* filter: grayscale(50%); */
+}
+
+.bigHover:hover img{
+  filter: grayscale(50%);
+  transform: scale(1.1);
+}
+
+
+
 .numberText{
   font-family: "Arial",  sans-serif !important;
 }

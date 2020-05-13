@@ -7,6 +7,7 @@ import Trip from './Trip.js'
 import { NavigationBar } from './components/NavigationBar';
 import { Layout } from './components/Layout'
 import { NoMatch } from './NoMatch';
+import Info from './Info.js'
 import { BrowserRouter  as Router, Route, Switch, Redirect  } from 'react-router-dom';
 import './css/styles.css';
 
@@ -46,6 +47,7 @@ class App extends Component {
               <Route path="/ToDo" component={ToDo} />
               <Route path="/Home" component={Home} />
               <Route path="/Trip" component={Trip} />
+              <Route path="/Info" component={Info} />
               <Route component={Home} />
             </Switch>
         </Router>

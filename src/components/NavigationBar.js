@@ -10,10 +10,10 @@ const Styles = styled.div`
     background-color: #262626;
     margin-bottom: 0;
     border: 0;
-    font-size: 18px !important;
+    font-size: 16px !important;
     letter-spacing: 2px;
     opacity: 1.0;
-    padding: 0;
+    padding: 6px;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -79,7 +79,7 @@ export const NavigationBar = () => (
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="5">
-              <Link to="/Home"><i class="fa fa-info" ></i> PROJECT INFO         </Link>
+              <Link to="/Info"><i class="fa fa-info" ></i> PROJECT INFO         </Link>
             </Nav.Link>
           </Nav.Item>
           <NavDropdown title={

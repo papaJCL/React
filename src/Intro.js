@@ -12,12 +12,13 @@ import ReactDOM from 'react-dom';
 
 const Button = styled.button`
     background: transparent;
-    border-radius: 6px;
+    border-radius: 25px;
     border: 2px solid #bbb;
     color: #bbb;
     width: 400vh
     margin: 0.1em 1em;
     padding: .8em 1em;
+    font-size: 36px;
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
@@ -36,11 +37,10 @@ class Intro extends Component {
     render() {
         return (
             <div className="introBG" >
-                <div className="overlay" />
                 <div className="w3-display-middle bg-text">
                     <h1 className="w3-center  w3-text-white w3-wide">{this.textFunction()}</h1>
                     <div className="big-hr" />
-                    <br/>
+                    <br/><br/><br/><br/><br/><br/>
                     <p className="w3-large w3-center">{this.goToButton()}</p>
                 </div>
             </div>
@@ -63,7 +63,7 @@ class Intro extends Component {
     textFunction() {
         return (
             <Typical
-                steps={['WELCOME', 1000, "TO" , 500 , "JEREMY'S WEBSITE", 500]}
+                steps={['WELCOME TO', 1000,  "JEREMY'S WEBSITE", 500]}
             />
         )
     }

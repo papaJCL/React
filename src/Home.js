@@ -17,7 +17,10 @@ import pythonPic from './Images/python.png'
 
 
 
-
+const AboutMeBody = (
+    "I am a Computer Science Graduate from CSU who is very interested in developing new and complex software. \n" + 
+    "My favorite hobbies besides programming include skiing, hiking, playing video games."
+)
 
 
 
@@ -40,22 +43,22 @@ class Home extends Component {
                             </div>
                         </Card>
                     </Col>
-                    <Col sm >
-                        <Card className="card border-0" style={{ backgroundColor: "#595959", height: '500px' }}>
-                            <Card.Title className="card text-center" style={{ padding: '17px', backgroundColor: "#404040", color: "#bbb", height: '60px' }}> BACKGROUND </Card.Title>
+                    
+                </Row>
+                <Row>
+                <Col sm >
+                        <Card className="card border-0 mx-auto" style={{ backgroundColor: "#595959"  , maxWidth: "400px"}}>
+                            <Card.Title className="card text-center" style={{ padding: '17px', backgroundColor: "#404040", color: "#bbb", height: '60px' }}> ABOUT </Card.Title>
                             <Card.Body >
                                 <div className="display-linebreak">
                                     <p>
-                                        {"1. For the letter grade column, put in your letter grade(A through F)\n" +
-                                            "2. For the credits column put how many credits its worth\n" +
-                                            "3. Leave the rest of the rows blank once you've put all your classes in\n" +
-                                            "4. Press Calculate when done"}
+                                        {AboutMeBody}
                                     </p>
                                 </div>
                             </Card.Body>
                         </Card>
                     </Col>
-                </Row>
+                    </Row>
             </div>
         )
     }
@@ -116,7 +119,7 @@ class Home extends Component {
         return (
             <CardGroup>
                 <Card className="card border-0 card text-center" style={{ backgroundColor: "#595959" }}>
-                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#262626", color: "#bbb", height: '60px' }}>TOOLS</Card.Title>
+                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#404040", color: "#bbb", height: '60px' }}>TOOLS</Card.Title>
                     <CardDeck>
                         <Card className="card border-0" style={{ backgroundColor: "#595959" }}>
                             <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={gitPic} />
@@ -159,10 +162,10 @@ class Home extends Component {
     renderSecondaryLanguages() {
         return (
             <CardGroup>
-                <Card className="card border-0 card text-center" style={{ backgroundColor: "#202020" }}>
-                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#707070", color: "#bbb", height: '60px' }}>SECONDARY LANGUAGES</Card.Title>
+                <Card className="card border-0 card text-center" style={{  backgroundColor: "#404040" }}>
+                    <Card.Title className="card text-center px-auto" style={{ padding: '17px', backgroundColor: "#595959", color: "#bbb", height: '60px' }}>SECONDARY LANGUAGES</Card.Title>
                     <CardDeck>
-                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
                             <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={cProgPic} />
                             <Card.Body>
                                 <Card.Text>
@@ -170,7 +173,7 @@ class Home extends Component {
                                         </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
                             <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={mySQLPic} />
                             <Card.Body>
                                 <Card.Text>
@@ -178,7 +181,7 @@ class Home extends Component {
                                         </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className="card border-0" style={{ backgroundColor: "#202020" }}>
+                        <Card className="card border-0" style={{ backgroundColor: "#404040" }}>
                             <Card.Img className="img-hover-zoom--basic logoHeight mx-auto" variant="top" src={pythonPic} />
                             <Card.Body>
                                 <Card.Text>

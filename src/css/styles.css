@@ -61,8 +61,8 @@ body {
     height:100vh;
     background-position: center;
     background-size: cover;
-    -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%) ; 
+    /* -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%) ;  */
   }
 
   * {
@@ -130,8 +130,8 @@ h4{
 
 
 .logoHeight{
-  height: 100px;
-  width: 125px;
+  height: 85px;
+  width: 100px;
 }
 
 .img-hover-zoom--basic  {
@@ -164,6 +164,7 @@ h4{
   filter: grayscale(50%);
   transform: scale(1.1);
 }
+
 
 
 

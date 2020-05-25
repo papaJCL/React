@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Home from './Home';
 import App from './App';
 import ReactDOM from 'react-dom';
+import { useHistory } from "react-router-dom";
+import { browserHistory } from 'react-router';
 
 
 
@@ -32,6 +34,7 @@ const Button = styled.button`
       }
 `;
 
+
 class Intro extends Component {
 
     render() {
@@ -57,6 +60,7 @@ class Intro extends Component {
     }
 
     loadWebsite(){
+        browserHistory.push('/About');
         ReactDOM.render(<App firstLoad="true"/> , document.getElementById('root'));
     }
 

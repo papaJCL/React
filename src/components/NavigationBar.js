@@ -68,13 +68,13 @@ export const NavigationBar = () => (
 
   <Styles>
     <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark">
-      <Navbar.Brand href="/index.html"><i className="fa fa-home"></i> JEREMY</Navbar.Brand>
+      <Navbar.Brand href="/"><i className="fa fa-home"></i> JEREMY</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" >
         <Nav className="ml-auto" >
           <Nav.Item>
             <Nav.Link eventKey="1">
-              <Link to="/Home"><i className="fa fa-user"></i> ABOUT</Link>
+              <Link to="/About"><i className="fa fa-user"></i> ABOUT</Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>

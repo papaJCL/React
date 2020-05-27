@@ -88,6 +88,8 @@ body {
 .display-linebreak {
     white-space: pre-line;
 }
+
+
   
 .test {
   background-color: grey;
@@ -138,13 +140,15 @@ h4{
   transition: transform .5s, filter 1.0s ease-in-out;
 }
 
+
+
 /* The Transformation */
 .img-hover-zoom--basic:hover {
   transform: scale(1.1);
 }
 
 .cardHeight{ 
-  max-height: 500px;
+  max-height: 480px;
 }
 
 .jeremyWidth{

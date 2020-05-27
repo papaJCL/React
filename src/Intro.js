@@ -60,7 +60,8 @@ class Intro extends Component {
     }
 
     loadWebsite(){
-        browserHistory.push('/About');
+        // browserHistory.push('/About');
+        // console.log("land here bro" , browserHistory.location());
         ReactDOM.render(<App firstLoad="true"/> , document.getElementById('root'));
     }
 

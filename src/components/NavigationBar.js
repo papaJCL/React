@@ -97,7 +97,7 @@ export const NavigationBar = () => (
             {/* <NavDropdown.Divider /> */}
             <NavDropdown.Item>
               <Nav.Link eventKey="4">
-                <Link to="/ToDo">COVID-TRACKER</Link>
+                <Link to="/COVID">COVID-TRACKER</Link>
               </Nav.Link>
             </NavDropdown.Item>
           </NavDropdown>

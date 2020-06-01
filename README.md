@@ -1,1 +1,1 @@
-PUBLIC URL:  jeremylesser.tk
+PUBLIC URL:  https://jeremylesser.tk/

@@ -1,68 +1,46 @@
-import React, { Component } from 'react';
-import GPA from './GPA.js'
-import Home from './Home.js'
-import Intro from './Intro.js'
-import ToDo from './ToDo.js'
-import Trip from './Trip.js'
-import { NavigationBar } from './components/NavigationBar';
-import Info from './Info.js'
-import { BrowserRouter  as Router, Route, Switch, Redirect  } from 'react-router-dom';
-import './css/styles.css';
+import React, { useState, useRef } from 'react';
+import { useOnClickOutside } from './hooks';
+
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './global';
+import { theme } from './theme';
+import Burger from './components/Burger';
+import Menu from './components/Menu';
+import Container from '@material-ui/core/Container';
+import Home from './Home'
+import About from './About'
+import Projects from './Projects'
+import Skills from './Skills'
+import Footer from './Footer'
+import Contact from './Contact'
 
 
 
-class App extends Component {
+function App() {
 
-  constructor(props) {
-    super(props);
+  const [open, setOpen] = useState(false);
 
-    this.setFinalAnswerState = this.setFinalAnswerState.bind(this);
-    this.resetGPAState = this.resetGPAState.bind(this);
-
-    this.state = {
-      renderGPACalculator: false,
-      finalGpaAnswer: null,
-    }
-
-  }
+  const node = useRef();
+  useOnClickOutside(node, () => setOpen(false));
 
 
-
-  render() {
-    return (
-      <div>
-        <Router>
-          <NavigationBar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/" component={Intro} />
-              <Route path="/GPA"
-                render={() => (<GPA
-                  finalGpaAnswer={this.state.finalGpaAnswer}
-                  setFinalAnswerState={this.setFinalAnswerState}
-                  resetGPAState={this.resetGPAState}
-                />)} />
-              <Route path="/COVID" component={ToDo} />
-              <Route path="/About" component={Home} />
-              <Route path="/Trip" component={Trip} />
-              <Route path="/Info" component={Info} />
-            </Switch>
-        </Router>
-      </div>
-    )
-  }
-
-  setFinalAnswerState(answer) {
-    this.setState({
-      finalGpaAnswer: answer
-    });
-  }
-
-  resetGPAState() {
-    this.setState({
-      finalGpaAnswer: null
-    });
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+        <Home id="home" />
+        <About id="about" />
+        <Projects id="projects" />
+        <Skills id="skills" />
+        <Contact id="contact" />
+        <Footer/>
+        
+      </>
+    </ThemeProvider>
+  );
 }
-
 export default App;

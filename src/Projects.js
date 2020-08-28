@@ -19,7 +19,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Tooltip';
 import tripPic from './images/trip.png'
 
 
@@ -123,16 +122,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="GPA Calculator" />
                                 <CardActions disableSpacing >
-                                    <Fab title="View Source Code">
                                         <IconButton >
                                             <CodeIcon />
                                         </IconButton>
-                                    </Fab>
-                                    <Fab title="Visit Website">
                                         <IconButton >
                                             <ExitToAppIcon />
                                         </IconButton>
-                                    </Fab>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: gpaExpanded,
@@ -163,16 +158,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="COVID Tracker" />
                                 <CardActions disableSpacing>
-                                    <Fab title="View Source Code">
                                         <IconButton >
                                             <CodeIcon />
                                         </IconButton>
-                                    </Fab>
-                                    <Fab title="Visit Website">
                                         <IconButton >
                                             <ExitToAppIcon />
                                         </IconButton>
-                                    </Fab>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: covidExpanded,
@@ -203,16 +194,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Plan Your Trip" />
                                 <CardActions disableSpacing>
-                                    <Fab title="View Source Code">
                                         <IconButton >
                                             <CodeIcon onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")} />
                                         </IconButton>
-                                    </Fab>
-                                    <Fab title="Visit Website">
                                         <IconButton >
                                             <ExitToAppIcon onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")} />
                                         </IconButton>
-                                    </Fab>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: tripExpanded,
@@ -247,16 +234,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Micro Service Health Ecosystem" />
                                 <CardActions disableSpacing>
-                                    <Fab title="View Source Code">
                                         <IconButton >
                                             <CodeIcon />
                                         </IconButton>
-                                    </Fab>
-                                    <Fab title="Visit Website">
                                         <IconButton >
                                             <ExitToAppIcon />
                                         </IconButton>
-                                    </Fab>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: wipExpanded,

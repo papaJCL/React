@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import bg from './images/reverse.jpg'
+import bg from './Images/reverse.jpg'
 
 
 export const ContactStyles = styled.div`

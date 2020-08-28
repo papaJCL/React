@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import './snow.scss';
 import { Link, animateScroll as scroll } from "react-scroll";
-import bg from './images/bg.jpg'
+import bg from './Images/bg.jpg'
 
 
 

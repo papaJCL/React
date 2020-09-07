@@ -20,6 +20,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
 import tripPic from './Images/trip.png'
+import GPAPic from './Images/GPAPic.png'
 
 
 
@@ -60,15 +61,14 @@ const useStyles = makeStyles((theme) => ({
         transition: '0.3s',
         '&:hover': {
             boxShadow: '0 4px 20px 0 rgba(0,0,0,0.12)',
-            // transform: 'scale(1.02)',
+            cursor: "pointer",
         },
     },
     media: {
         maxWidth: 600,
         //paddingTop: '56.25%', // 16:9
-        paddingTop: '40.25%', // 16:9
-        objectFit: 'fill',
-
+        paddingTop: '42.25%', // 16:9
+        objectFit: 'cover',
     },
     expand: {
         transform: 'rotate(0deg)',
@@ -117,17 +117,17 @@ const Projects = ({ id }) => {
 
                                 <CardMedia
                                     className={classes.media}
-                                    image="https://wallpapercave.com/wp/wp4892354.jpg"
-                                    title="Paella dish"
+                                    image={GPAPic}
+                                    title="GPA Calculator"
                                 />
                                 <CardHeader title="GPA Calculator" />
                                 <CardActions disableSpacing >
-                                        <IconButton >
-                                            <CodeIcon />
-                                        </IconButton>
-                                        <IconButton >
-                                            <ExitToAppIcon />
-                                        </IconButton>
+                                    <IconButton >
+                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")} />
+                                    </IconButton>
+                                    <IconButton >
+                                        <ExitToAppIcon onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} />
+                                    </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: gpaExpanded,
@@ -158,12 +158,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="COVID Tracker" />
                                 <CardActions disableSpacing>
-                                        <IconButton >
-                                            <CodeIcon />
-                                        </IconButton>
-                                        <IconButton >
-                                            <ExitToAppIcon />
-                                        </IconButton>
+                                    <IconButton >
+                                        <CodeIcon />
+                                    </IconButton>
+                                    <IconButton >
+                                        <ExitToAppIcon />
+                                    </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: covidExpanded,
@@ -194,12 +194,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Plan Your Trip" />
                                 <CardActions disableSpacing>
-                                        <IconButton >
-                                            <CodeIcon onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")} />
-                                        </IconButton>
-                                        <IconButton >
-                                            <ExitToAppIcon onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")} />
-                                        </IconButton>
+                                    <IconButton >
+                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")} />
+                                    </IconButton>
+                                    <IconButton >
+                                        <ExitToAppIcon onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")} />
+                                    </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: tripExpanded,
@@ -234,12 +234,12 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Micro Service Health Ecosystem" />
                                 <CardActions disableSpacing>
-                                        <IconButton >
-                                            <CodeIcon />
-                                        </IconButton>
-                                        <IconButton >
-                                            <ExitToAppIcon />
-                                        </IconButton>
+                                    <IconButton >
+                                        <CodeIcon />
+                                    </IconButton>
+                                    <IconButton >
+                                        <ExitToAppIcon />
+                                    </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: wipExpanded,

@@ -157,7 +157,7 @@ const Projects = ({ id }) => {
                                     image={covidPic}
                                     title="Paella dish"
                                 />
-                                <CardHeader title="COVID Tracker" />
+                                <CardHeader title="COVID-19 Tracker" />
                                 <CardActions disableSpacing>
                                     <IconButton >
                                         <CodeIcon onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")} />

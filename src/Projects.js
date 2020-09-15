@@ -21,6 +21,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
 import tripPic from './Images/trip.png'
 import GPAPic from './Images/GPAPic.png'
+import covidPic from './Images/covid.png'
 
 
 
@@ -153,16 +154,16 @@ const Projects = ({ id }) => {
                             <Card className={classes.root}>
                                 <CardMedia
                                     className={classes.media}
-                                    image="https://wallpapercave.com/wp/wp4892354.jpg"
+                                    image={covidPic}
                                     title="Paella dish"
                                 />
                                 <CardHeader title="COVID Tracker" />
                                 <CardActions disableSpacing>
                                     <IconButton >
-                                        <CodeIcon />
+                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")} />
                                     </IconButton>
                                     <IconButton >
-                                        <ExitToAppIcon />
+                                        <ExitToAppIcon onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")} />
                                     </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {

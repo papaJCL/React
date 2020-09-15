@@ -187,60 +187,12 @@ const returnSnow = () => {
       <div className="snow"></div>
       <div className="snow"></div>
       <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
-      <div className="snow"></div>
     </div>
   )
 }
 
 
-const Home = ({ id }) => {
+const Home = React.memo (({ id }) => {
 
   return (
     <div id={id} >
@@ -264,7 +216,7 @@ const Home = ({ id }) => {
       </HomeStyles>
     </div>
   )
-}
+})
 
 
  {/* <Button onClick={() => console.log("landed here")}> */}

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, animateScroll as scroll } from "react-scroll";
 
- const StyledMenu = styled.nav`
+const StyledMenu = styled.nav`
   position: fixed;
   z-index: 11;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};

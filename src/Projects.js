@@ -123,11 +123,11 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="GPA Calculator" />
                                 <CardActions disableSpacing >
-                                    <IconButton >
-                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")} />
+                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")}>
+                                        <CodeIcon  />
                                     </IconButton>
-                                    <IconButton >
-                                        <ExitToAppIcon onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} />
+                                    <IconButton onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} >
+                                        <ExitToAppIcon />
                                     </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
@@ -159,11 +159,11 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="COVID-19 Tracker" />
                                 <CardActions disableSpacing>
-                                    <IconButton >
-                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")} />
+                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")}>
+                                        <CodeIcon  />
                                     </IconButton>
-                                    <IconButton >
-                                        <ExitToAppIcon onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")} />
+                                    <IconButton  onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")}>
+                                        <ExitToAppIcon />
                                     </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
@@ -195,11 +195,11 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Plan Your Trip" />
                                 <CardActions disableSpacing>
-                                    <IconButton >
-                                        <CodeIcon onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")} />
+                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")}>
+                                        <CodeIcon  />
                                     </IconButton>
-                                    <IconButton >
-                                        <ExitToAppIcon onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")} />
+                                    <IconButton onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")}>
+                                        <ExitToAppIcon  />
                                     </IconButton>
                                     <IconButton
                                         className={clsx(classes.expand, {
@@ -225,7 +225,7 @@ const Projects = ({ id }) => {
                                 </Collapse>
                             </Card>
                         </Grid>
-                        
+
                     </Grid>
                 </Container>
             </ProjectStyles>

@@ -5,7 +5,8 @@ import Container from '@material-ui/core/Container';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import { GrLinkedin , GrGithub , GrMail} from "react-icons/gr";
+import { GrLinkedin, GrGithub, GrMail } from "react-icons/gr";
+import Fade from 'react-reveal/Fade';
 
 
 
@@ -62,22 +63,29 @@ const Contact = ({ id }) => {
         <div id={id} >
             <ContactStyles>
                 <Container>
-                <ThankYouHeader>Thank You For Visiting!</ThankYouHeader>
+                    <Fade bottom>
+                        <ThankYouHeader>Thank You For Visiting!</ThankYouHeader>
+                    </Fade>
+                    <Fade bottom>
                     <Header>Contact</Header>
+                    </Fade>
+                    <Fade bottom>
                     <center>
-                    <IconButton onClick={()=> window.open("https://www.linkedin.com/in/jeremy-collier-lesser/", "_blank")} aria-label="delete" className={classes.margin}>
-                        <GrLinkedin size={45} style={{color: 'black'}} />
-                    </IconButton>
-                    <IconButton  onClick={()=> window.open("https://github.com/papaJCL", "_blank")} className={classes.margin}>
-                        <GrGithub size={45}  style={{color: 'black'}}/>
-                    </IconButton>
-                    <IconButton  onClick={()=> window.open(`mailto:${'jeremylessermore@gmail.com'}`)} className={classes.margin}>
-                        <GrMail size={45}  style={{color: 'black'}}/>
-                    </IconButton>
+                    
+                        <IconButton onClick={() => window.open("https://www.linkedin.com/in/jeremy-collier-lesser/", "_blank")} aria-label="delete" className={classes.margin}>
+                            <GrLinkedin size={45} style={{ color: 'black' }} />
+                        </IconButton>
+                        <IconButton onClick={() => window.open("https://github.com/papaJCL", "_blank")} className={classes.margin}>
+                            <GrGithub size={45} style={{ color: 'black' }} />
+                        </IconButton>
+                        <IconButton onClick={() => window.open(`mailto:${'jeremylessermore@gmail.com'}`)} className={classes.margin}>
+                            <GrMail size={45} style={{ color: 'black' }} />
+                        </IconButton>
                     </center>
-                    <br/> <br/> 
+                    <br /> <br />
                     <Footertext>Built with Material-UI and Styled-Components</Footertext>
                     <Footertext>Jeremy Lesser ©2020</Footertext>
+                    </Fade>
                 </Container>
             </ContactStyles>
 

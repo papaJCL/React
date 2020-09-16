@@ -3,19 +3,15 @@ import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 import cx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import FavoriteBorderRounded from '@material-ui/icons/FavoriteBorderRounded';
-import Share from '@material-ui/icons/Share';
-import { SiNodeDotJs , SiRedux } from "react-icons/si";
-import { DiDocker , DiGit } from "react-icons/di";
-import { FaReact , FaAws } from 'react-icons/fa';
+import Fade from 'react-reveal/Fade';
+
+import { SiNodeDotJs, SiRedux } from "react-icons/si";
+import { DiDocker, DiGit } from "react-icons/di";
+import { FaReact, FaAws } from 'react-icons/fa';
 import { CgCPlusPlus } from "react-icons/cg";
-import { GrMysql , GrCss3 } from "react-icons/gr";
+import { GrMysql, GrCss3 } from "react-icons/gr";
 import Grid from '@material-ui/core/Grid';
 
 
@@ -73,7 +69,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             transform: 'translateY(-3px)',
             boxShadow: '0 4px 20px 0 rgba(0,0,0,0.12)',
-          },
+        },
 
     },
     content: {
@@ -108,29 +104,35 @@ const Skills = ({ id }) => {
         <div id={id} >
             <SkillsStyles>
                 <Container>
-                    <Header>Skills</Header>
+                    <Fade bottom>
+                        <Header>Skills</Header>
+                    </Fade>
                     <br />
-                    <GridTitle>Main Languages</GridTitle>
-                    <Grid container spacing={3} justify='center'>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="React" Icon={FaReact} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="CSS" Icon={GrCss3} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="mySQL" Icon={GrMysql} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="C++" Icon={CgCPlusPlus} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="Express" Icon={SiNodeDotJs} /> </Grid>
-                    </Grid>
-                    <br/>
-                    <GridTitle>Technologies</GridTitle>
-                    <Grid container spacing={3} justify='center'>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="Docker" Icon={DiDocker} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="AWS" Icon={FaAws} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="GIT" Icon={DiGit} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="Redux" Icon={SiRedux} /> </Grid>
-                    </Grid>
+                    <Fade bottom>
+                        <GridTitle>Main Languages</GridTitle>
+                        <Grid container spacing={3} justify='center'>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="React" Icon={FaReact} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="CSS" Icon={GrCss3} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="mySQL" Icon={GrMysql} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="C++" Icon={CgCPlusPlus} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="Express" Icon={SiNodeDotJs} /> </Grid>
+                        </Grid>
+                    </Fade>
+                    <br />
+                    <Fade bottom>
+                        <GridTitle>Technologies</GridTitle>
+                        <Grid container spacing={3} justify='center'>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="Docker" Icon={DiDocker} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="AWS" Icon={FaAws} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="GIT" Icon={DiGit} /> </Grid>
+                            <Grid item xs={8} sm={2} ><PostCardDemo Text="Redux" Icon={SiRedux} /> </Grid>
+                        </Grid>
+                    </Fade>
                 </Container>
-            </SkillsStyles>
-            <br/>
-        </div>
-        
+            </SkillsStyles >
+            <br />
+        </div >
+
     )
 }
 export default Skills;

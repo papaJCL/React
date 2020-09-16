@@ -8,20 +8,19 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import CodeIcon from '@material-ui/icons/Code';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
 import tripPic from './Images/trip.png'
 import GPAPic from './Images/GPAPic.png'
 import covidPic from './Images/covid.png'
+import Tooltip from '@material-ui/core/Tooltip';
+import Fade from 'react-reveal/Fade';
+
 
 
 
@@ -110,12 +109,12 @@ const Projects = ({ id }) => {
         <div id={id} >
 
             <ProjectStyles>
+            <Fade bottom>
                 <Header>My Projects</Header>
                 <Container>
                     <Grid container spacing={3} justify='center'>
                         <Grid item xs={12} sm={6} >
                             <Card className={classes.root}>
-
                                 <CardMedia
                                     className={classes.media}
                                     image={GPAPic}
@@ -123,12 +122,16 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="GPA Calculator" />
                                 <CardActions disableSpacing >
-                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")}>
-                                        <CodeIcon  />
-                                    </IconButton>
-                                    <IconButton onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} >
-                                        <ExitToAppIcon />
-                                    </IconButton>
+                                    <Tooltip title="View Source Code">
+                                        <IconButton onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")}>
+                                            <CodeIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                    <Tooltip title="Go To Site">
+                                        <IconButton onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} >
+                                            <ExitToAppIcon />
+                                        </IconButton>
+                                    </Tooltip >
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: gpaExpanded,
@@ -142,8 +145,11 @@ const Projects = ({ id }) => {
                                 </CardActions>
                                 <Collapse in={gpaExpanded} timeout="auto" unmountOnExit>
                                     <CardContent>
-                                        <Typography paragraph>
-                                            GPA Text
+                                        <Typography variant="h6" color="textSecondary">
+                                            Technologies Used:
+                                        </Typography>
+                                        <Typography variant="body1" color="textSecondary">
+                                            Styled-Components, React-Bootstrap
                                         </Typography>
                                     </CardContent>
                                 </Collapse>
@@ -159,12 +165,16 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="COVID-19 Tracker" />
                                 <CardActions disableSpacing>
-                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")}>
-                                        <CodeIcon  />
-                                    </IconButton>
-                                    <IconButton  onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")}>
-                                        <ExitToAppIcon />
-                                    </IconButton>
+                                    <Tooltip title="View Source Code">
+                                        <IconButton onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")}>
+                                            <CodeIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                    <Tooltip title="Go To Site">
+                                        <IconButton onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")}>
+                                            <ExitToAppIcon />
+                                        </IconButton>
+                                    </Tooltip>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: covidExpanded,
@@ -178,8 +188,11 @@ const Projects = ({ id }) => {
                                 </CardActions>
                                 <Collapse in={covidExpanded} timeout="auto" unmountOnExit>
                                     <CardContent>
-                                        <Typography paragraph>
-                                            Covid Placeholder Text
+                                        <Typography variant="h6" color="textSecondary">
+                                            Technologies Used:
+                                        </Typography>
+                                        <Typography variant="body1" color="textSecondary">
+                                            Material-UI , Axios, Recharts, Styled-Components
                                         </Typography>
                                     </CardContent>
                                 </Collapse>
@@ -195,12 +208,16 @@ const Projects = ({ id }) => {
                                 />
                                 <CardHeader title="Plan Your Trip" />
                                 <CardActions disableSpacing>
+                                <Tooltip title="View Source Code">
                                     <IconButton onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")}>
-                                        <CodeIcon  />
+                                        <CodeIcon />
                                     </IconButton>
+                                    </Tooltip>
+                                    <Tooltip title="Go To Site">
                                     <IconButton onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")}>
-                                        <ExitToAppIcon  />
+                                        <ExitToAppIcon />
                                     </IconButton>
+                                    </Tooltip>
                                     <IconButton
                                         className={clsx(classes.expand, {
                                             [classes.expandOpen]: tripExpanded,
@@ -214,12 +231,11 @@ const Projects = ({ id }) => {
                                 </CardActions>
                                 <Collapse in={tripExpanded} timeout="auto" unmountOnExit>
                                     <CardContent>
-                                        <Typography paragraph>
-                                            Software that can help your organize trip and make it faster. Import JSON with all the destinations or search them through the world database and add them to the itinerary. An example JSON is provided below.
-                                           <br />
-                                            <a href="https://github.com/papaJCL/React/blob/master/JSON%20examples/coloradobrews.json"
-                                                target="_blank"
-                                                title="JSON Example 1">JSON Example</a>
+                                        <Typography variant="h6" color="textSecondary">
+                                            Technologies Used:
+                                        </Typography>
+                                        <Typography variant="body1" color="textSecondary">
+                                            MySQL, Java Spark, MariaDB, Junit, Maven, Bootstrap, Leaflets
                                         </Typography>
                                     </CardContent>
                                 </Collapse>
@@ -228,6 +244,7 @@ const Projects = ({ id }) => {
 
                     </Grid>
                 </Container>
+                </Fade>
             </ProjectStyles>
         </div>
     )

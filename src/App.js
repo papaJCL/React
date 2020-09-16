@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useOnClickOutside } from './hooks';
 
 import { ThemeProvider } from 'styled-components';
@@ -23,6 +23,18 @@ function App() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    }
+  }, [])
+
+  // const refreshPage = () =>{
+  //   window.onbeforeunload =  () => {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,8 +49,7 @@ function App() {
         <Projects id="projects" />
         <Skills id="skills" />
         <Contact id="contact" />
-        <Footer/>
-        
+        <Footer />
       </>
     </ThemeProvider>
   );

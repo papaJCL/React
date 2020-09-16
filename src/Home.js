@@ -6,6 +6,7 @@ import bg from './Images/bg.jpg'
 
 
 
+
 export const HomeStyles = styled.div`
     align-items: center;
     background:  url(${bg}) no-repeat center center ;
@@ -18,22 +19,31 @@ export const HomeStyles = styled.div`
     //flex-wrap: wrap;
     height: 100vh;
     overflow-x: hidden;
-    //justify-content: center;
   `
 
-const Button = styled.button`
+  export const AStyle = styled.button`
+  cursor: pointer;
+  text-decoration:none;
+  font-size: 2.2rem;
+  background: rgb(0,139,139 , 0.6);
+  color: ${({ theme }) => theme.primaryLight};
+  //border: 2px solid white;
+  border: none;
   position: absolute;
   bottom:8%;
-  background: ${({ theme }) => theme.primaryLight};
-  border-radius: 3px;
-  border: 2px solid white;
-  color: ${({ theme }) => theme.primaryDark};
-  margin: 0 1em;
-  padding: 0.25em 1em;
+  //font-weight: bold;
+  //letter-spacing: 0.2rem;
+
+  font-family:'raleway';
+  
+  box-shadow: 0 5px 10px rgba(154,160,185,.6), 0 15px 40px rgba(166,173,201,.2);
   &:hover {
-    color: ${({ theme }) => theme.primaryHover};
+    // color: ${({ theme }) => theme.primaryHover};
+    background: rgb(0,139,139 );
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
   }
 `
+
 
 const Hero = styled.div`
   z-index: 10;
@@ -191,7 +201,6 @@ const returnSnow = () => {
   )
 }
 
-
 const Home = React.memo (({ id }) => {
 
   return (
@@ -199,15 +208,17 @@ const Home = React.memo (({ id }) => {
       {returnSnow()}
       <HomeStyles>
         <Hero>
-          <Button >
+        <AStyle href="/" >
             <Link
               activeClass="active"
               to="about"
               spy={false}
               smooth={true}
               duration={500}
-            >Learn More ↓ </Link>
-          </Button>
+            >
+              Learn More  <i className="far fa-hand-point-down"></i>
+            </Link>
+            </AStyle>
           <TextWrapper>
             <Header>Hello, I'm <ColorText>Jeremy Lesser</ColorText></Header>
             <SubHeader>Aspiring <SubColorText>Software/Fullstack</SubColorText> Engineer </SubHeader>
@@ -218,7 +229,5 @@ const Home = React.memo (({ id }) => {
   )
 })
 
-
- {/* <Button onClick={() => console.log("landed here")}> */}
 
 export default Home;

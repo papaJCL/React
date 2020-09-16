@@ -9,7 +9,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.primaryDark};
+  background: ${({ theme }) => theme.jeremyFont};
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -20,7 +20,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
   
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
-    //overflow: hidden;
   }
 
   
@@ -33,7 +32,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.primaryLight};
     text-decoration: none;
-    transition: color 0.3s linear;
+    transition: color 0.1s linear;
     
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;
@@ -58,7 +57,7 @@ const Menu = ({ open, setOpen }) => {
           smooth={true}
           duration={500}
           onClick={() => setOpen(!open)}
-        >💁🏻‍♂️Home </Link>
+        >Home </Link>
       </a>
       <a href="/" >
         <span aria-hidden="true"></span>
@@ -69,7 +68,7 @@ const Menu = ({ open, setOpen }) => {
           smooth={true}
           duration={500}
           onClick={() => setOpen(!open)}
-        >💁🏻‍♂️About </Link>
+        >About </Link>
       </a>
       <a href="/" >
         <span aria-hidden="true"></span>

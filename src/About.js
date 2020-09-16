@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import { shadows } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
+import mePic from './Images/me.jpg'
 
 
 
@@ -52,7 +53,7 @@ const useStyles = makeStyles({
     //maxWidth: 400,
     // width: 'auto',
     height: 400,
-    boxShadow: '0 8px 6px -6px black'
+    boxShadow: '0 4px 20px 0 rgba(0,0,0,0.12)',
   },
   media: {
     height: 400,
@@ -62,6 +63,11 @@ const useStyles = makeStyles({
   },
 
 });
+
+const AboutMeBody = (
+    "I am a Computer Science Graduate from CSU who is very interested in developing new and complex software. \n" +
+    "My favorite hobbies besides programming include skiing, hiking, and playing video games."
+)
 
 const About = ({ id }) => {
 
@@ -77,7 +83,7 @@ const About = ({ id }) => {
               <Card className={classes.root}>
                 <CardMedia
                   className={classes.media}
-                  image="https://wallpapercave.com/wp/wp4892354.jpg"
+                  image={mePic}
                   title="Me"
                 />
               </Card>
@@ -85,14 +91,14 @@ const About = ({ id }) => {
             <Grid item md={3}>
               <Card className={classes.root}>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Me
           </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except AntarcticaLizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    I am a Computer Science Graduate from CSU who is very interested in developing new and complex software.
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+                    My favorite hobbies besides programming include skiing, hiking, and playing video games
           </Typography>
                 </CardContent>
               </Card>

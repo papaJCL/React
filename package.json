@@ -8,25 +8,13 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "clean": "clean-deps"
   },
   "proxy": "http://localhost:5000",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "@mui-treasury/styles": "^1.13.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "node-sass": "^4.14.1",
-    "react": "16.13.1",
-    "react-burger-menu": "^2.7.1",
-    "react-dom": "16.13.1",
-    "react-icons": "^3.11.0",
-    "react-scripts": "^3.4.3",
-    "react-scroll": "^1.8.1",
-    "styled-components": "^5.1.1"
+    "react": "16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

@@ -225,45 +225,7 @@ const Projects = ({ id }) => {
                                 </Collapse>
                             </Card>
                         </Grid>
-                        <Grid item xs={12} sm={6} >
-
-                            <Card className={classes.root}>
-                                <CardMedia
-                                    className={classes.media}
-                                    image="https://wallpapercave.com/wp/wp4892354.jpg"
-                                    title="Paella dish"
-                                />
-                                <CardHeader title="Micro Service Health Ecosystem" />
-                                <CardActions disableSpacing>
-                                    <IconButton >
-                                        <CodeIcon />
-                                    </IconButton>
-                                    <IconButton >
-                                        <ExitToAppIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        className={clsx(classes.expand, {
-                                            [classes.expandOpen]: wipExpanded,
-                                        })}
-                                        onClick={handleWIPClick}
-                                        aria-expanded={wipExpanded}
-                                        aria-label="show more"
-                                    >
-                                        <ExpandMoreIcon />
-                                    </IconButton>
-                                </CardActions>
-                                <Collapse in={wipExpanded} timeout="auto" unmountOnExit>
-                                    <CardContent>
-                                        <Typography paragraph>Method:</Typography>
-                                        <Typography paragraph>
-                                            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                                            minutes.
-                                            Set aside off of the heat to let rest for 10 minutes, and then serve.
-                                </Typography>
-                                    </CardContent>
-                                </Collapse>
-                            </Card>
-                        </Grid>
+                        
                     </Grid>
                 </Container>
             </ProjectStyles>

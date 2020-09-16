@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteBorderRounded from '@material-ui/icons/FavoriteBorderRounded';
 import Share from '@material-ui/icons/Share';
-import { SiNodeDotJs , SiFirebase } from "react-icons/si";
+import { SiNodeDotJs , SiRedux } from "react-icons/si";
 import { DiDocker , DiGit } from "react-icons/di";
 import { FaReact , FaAws } from 'react-icons/fa';
 import { CgCPlusPlus } from "react-icons/cg";
@@ -19,16 +19,9 @@ import { GrMysql , GrCss3 } from "react-icons/gr";
 import Grid from '@material-ui/core/Grid';
 
 
-// import { useN01TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n01';
-// import TextInfoContent from '@mui-treasury/components/content/textInfo';
-
-
 export const SkillsStyles = styled.div`
-    //align-items: center;
-    //height:100vh;
     background-color:	rgb(173, 208, 236);
-    // background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
-  `
+`
 
 export const Header = styled.h1`
   font-size:2.5rem;
@@ -131,7 +124,7 @@ const Skills = ({ id }) => {
                         <Grid item xs={8} sm={2} ><PostCardDemo Text="Docker" Icon={DiDocker} /> </Grid>
                         <Grid item xs={8} sm={2} ><PostCardDemo Text="AWS" Icon={FaAws} /> </Grid>
                         <Grid item xs={8} sm={2} ><PostCardDemo Text="GIT" Icon={DiGit} /> </Grid>
-                        <Grid item xs={8} sm={2} ><PostCardDemo Text="FireBase" Icon={SiFirebase} /> </Grid>
+                        <Grid item xs={8} sm={2} ><PostCardDemo Text="Redux" Icon={SiRedux} /> </Grid>
                     </Grid>
                 </Container>
             </SkillsStyles>

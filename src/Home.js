@@ -221,7 +221,7 @@ const Home = React.memo (({ id }) => {
             </AStyle>
           <TextWrapper>
             <Header>Hello, I'm <ColorText>Jeremy Lesser</ColorText></Header>
-            <SubHeader>Aspiring <SubColorText>Software/Fullstack</SubColorText> Engineer </SubHeader>
+            <SubHeader>Software <SubColorText>Engineer</SubColorText> With a Focus on <SubColorText>Front-End</SubColorText> </SubHeader>
           </TextWrapper>
         </Hero>
       </HomeStyles>

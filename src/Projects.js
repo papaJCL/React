@@ -109,141 +109,179 @@ const Projects = ({ id }) => {
         <div id={id} >
 
             <ProjectStyles>
-            <Fade bottom>
-                <Header>My Projects</Header>
-                <Container>
-                    <Grid container spacing={3} justify='center'>
-                        <Grid item xs={12} sm={6} >
-                            <Card className={classes.root}>
-                                <CardMedia
-                                    className={classes.media}
-                                    image={GPAPic}
-                                    title="GPA Calculator"
-                                />
-                                <CardHeader title="GPA Calculator" />
-                                <CardActions disableSpacing >
-                                    <Tooltip title="View Source Code">
-                                        <IconButton onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")}>
-                                            <CodeIcon />
-                                        </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title="Go To Site">
-                                        <IconButton onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} >
-                                            <ExitToAppIcon />
-                                        </IconButton>
-                                    </Tooltip >
-                                    <IconButton
-                                        className={clsx(classes.expand, {
-                                            [classes.expandOpen]: gpaExpanded,
-                                        })}
-                                        onClick={handleGPAClick}
-                                        aria-expanded={gpaExpanded}
-                                        aria-label="show more"
-                                    >
-                                        <ExpandMoreIcon />
-                                    </IconButton>
-                                </CardActions>
-                                <Collapse in={gpaExpanded} timeout="auto" unmountOnExit>
-                                    <CardContent>
-                                        <Typography variant="h6" color="textSecondary">
-                                            Technologies Used:
-                                        </Typography>
-                                        <Typography variant="body1" color="textSecondary">
-                                            Styled-Components, React-Bootstrap
-                                        </Typography>
-                                    </CardContent>
-                                </Collapse>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} >
+                <Fade bottom>
+                    <Header>My Projects</Header>
+                    <Container>
+                        <Grid container spacing={3} justify='center'>
+                            <Grid item xs={12} sm={6} >
 
-                            <Card className={classes.root}>
-                                <CardMedia
-                                    className={classes.media}
-                                    image={covidPic}
-                                    title="Paella dish"
-                                />
-                                <CardHeader title="COVID-19 Tracker" />
-                                <CardActions disableSpacing>
-                                    <Tooltip title="View Source Code">
-                                        <IconButton onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")}>
-                                            <CodeIcon />
+                                <Card className={classes.root}>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image="https://raw.githubusercontent.com/papaJCL/Docker-boiletplate/master/loginpic.png"
+                                        title="Paella dish"
+                                    />
+                                    <CardHeader title="Docker Boilerplate Login Page(PERN Stack)" />
+                                    <CardActions disableSpacing>
+                                        <Tooltip title="View Source Code">
+                                            <IconButton onClick={() => window.open("https://github.com/papaJCL/Docker-boiletplate", "_blank")}>
+                                                <CodeIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <IconButton
+                                            className={clsx(classes.expand, {
+                                                [classes.expandOpen]: wipExpanded,
+                                            })}
+                                            onClick={handleWIPClick}
+                                            aria-expanded={wipExpanded}
+                                            aria-label="show more"
+                                        >
+                                            <ExpandMoreIcon />
                                         </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title="Go To Site">
-                                        <IconButton onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")}>
-                                            <ExitToAppIcon />
+                                    </CardActions>
+                                    <Collapse in={wipExpanded} timeout="auto" unmountOnExit>
+                                        <CardContent>
+                                            <Typography variant="h6" color="textSecondary">
+                                                Technologies Used:
+                                            </Typography>
+                                            <Typography variant="body1" color="textSecondary">
+                                                Postgresql, ExpressJS, React, NodeJS, Styled-Components, Redux, JWTAuthentication
+                                            </Typography>
+                                        </CardContent>
+                                    </Collapse>
+                                </Card>
+                            </Grid>
+
+                            <Grid item xs={12} sm={6} >
+                                <Card className={classes.root}>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={GPAPic}
+                                        title="GPA Calculator"
+                                    />
+                                    <CardHeader title="GPA Calculator" />
+                                    <CardActions disableSpacing >
+                                        <Tooltip title="View Source Code">
+                                            <IconButton onClick={() => window.open("https://github.com/papaJCL/GPA-Calculator", "_blank")}>
+                                                <CodeIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <Tooltip title="Go To Site">
+                                            <IconButton onClick={() => window.open("https://papajcl.github.io/GPA-Calculator/", "_blank")} >
+                                                <ExitToAppIcon />
+                                            </IconButton>
+                                        </Tooltip >
+                                        <IconButton
+                                            className={clsx(classes.expand, {
+                                                [classes.expandOpen]: gpaExpanded,
+                                            })}
+                                            onClick={handleGPAClick}
+                                            aria-expanded={gpaExpanded}
+                                            aria-label="show more"
+                                        >
+                                            <ExpandMoreIcon />
                                         </IconButton>
-                                    </Tooltip>
-                                    <IconButton
-                                        className={clsx(classes.expand, {
-                                            [classes.expandOpen]: covidExpanded,
-                                        })}
-                                        onClick={handleCovidClick}
-                                        aria-expanded={covidExpanded}
-                                        aria-label="show more"
-                                    >
-                                        <ExpandMoreIcon />
-                                    </IconButton>
-                                </CardActions>
-                                <Collapse in={covidExpanded} timeout="auto" unmountOnExit>
-                                    <CardContent>
-                                        <Typography variant="h6" color="textSecondary">
-                                            Technologies Used:
+                                    </CardActions>
+                                    <Collapse in={gpaExpanded} timeout="auto" unmountOnExit>
+                                        <CardContent>
+                                            <Typography variant="h6" color="textSecondary">
+                                                Technologies Used:
                                         </Typography>
-                                        <Typography variant="body1" color="textSecondary">
-                                            Material-UI , Axios, Recharts, Styled-Components
+                                            <Typography variant="body1" color="textSecondary">
+                                                Styled-Components, React-Bootstrap
                                         </Typography>
-                                    </CardContent>
-                                </Collapse>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} >
+                                        </CardContent>
+                                    </Collapse>
+                                </Card>
+                            </Grid>
+                            <Grid item xs={12} sm={6} >
 
-                            <Card className={classes.root}>
-                                <CardMedia
-                                    className={classes.media}
-                                    image={tripPic}
-                                    title="Paella dish"
-                                />
-                                <CardHeader title="Plan Your Trip" />
-                                <CardActions disableSpacing>
-                                <Tooltip title="View Source Code">
-                                    <IconButton onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")}>
-                                        <CodeIcon />
-                                    </IconButton>
-                                    </Tooltip>
-                                    <Tooltip title="Go To Site">
-                                    <IconButton onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")}>
-                                        <ExitToAppIcon />
-                                    </IconButton>
-                                    </Tooltip>
-                                    <IconButton
-                                        className={clsx(classes.expand, {
-                                            [classes.expandOpen]: tripExpanded,
-                                        })}
-                                        onClick={handleTripClick}
-                                        aria-expanded={tripExpanded}
-                                        aria-label="show more"
-                                    >
-                                        <ExpandMoreIcon />
-                                    </IconButton>
-                                </CardActions>
-                                <Collapse in={tripExpanded} timeout="auto" unmountOnExit>
-                                    <CardContent>
-                                        <Typography variant="h6" color="textSecondary">
-                                            Technologies Used:
+                                <Card className={classes.root}>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={covidPic}
+                                        title="Paella dish"
+                                    />
+                                    <CardHeader title="COVID-19 Tracker" />
+                                    <CardActions disableSpacing>
+                                        <Tooltip title="View Source Code">
+                                            <IconButton onClick={() => window.open("https://github.com/papaJCL/COVID", "_blank")}>
+                                                <CodeIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <Tooltip title="Go To Site">
+                                            <IconButton onClick={() => window.open("https://papajcl.github.io/COVID/", "_blank")}>
+                                                <ExitToAppIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <IconButton
+                                            className={clsx(classes.expand, {
+                                                [classes.expandOpen]: covidExpanded,
+                                            })}
+                                            onClick={handleCovidClick}
+                                            aria-expanded={covidExpanded}
+                                            aria-label="show more"
+                                        >
+                                            <ExpandMoreIcon />
+                                        </IconButton>
+                                    </CardActions>
+                                    <Collapse in={covidExpanded} timeout="auto" unmountOnExit>
+                                        <CardContent>
+                                            <Typography variant="h6" color="textSecondary">
+                                                Technologies Used:
                                         </Typography>
-                                        <Typography variant="body1" color="textSecondary">
-                                            MySQL, Java Spark, MariaDB, Junit, Maven, Bootstrap, Leaflets
+                                            <Typography variant="body1" color="textSecondary">
+                                                Material-UI , Axios, Recharts, Styled-Components
                                         </Typography>
-                                    </CardContent>
-                                </Collapse>
-                            </Card>
-                        </Grid>
+                                        </CardContent>
+                                    </Collapse>
+                                </Card>
+                            </Grid>
+                            <Grid item xs={12} sm={6} >
 
-                    </Grid>
-                </Container>
+                                <Card className={classes.root}>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={tripPic}
+                                        title="Paella dish"
+                                    />
+                                    <CardHeader title="Plan Your Trip" />
+                                    <CardActions disableSpacing>
+                                        <Tooltip title="View Source Code">
+                                            <IconButton onClick={() => window.open("https://github.com/papaJCL/Plan-Your-Own-Trip", "_blank")}>
+                                                <CodeIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <Tooltip title="Go To Site">
+                                            <IconButton onClick={() => window.open("http://ec2-3-21-242-13.us-east-2.compute.amazonaws.com:8888/", "_blank")}>
+                                                <ExitToAppIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <IconButton
+                                            className={clsx(classes.expand, {
+                                                [classes.expandOpen]: tripExpanded,
+                                            })}
+                                            onClick={handleTripClick}
+                                            aria-expanded={tripExpanded}
+                                            aria-label="show more"
+                                        >
+                                            <ExpandMoreIcon />
+                                        </IconButton>
+                                    </CardActions>
+                                    <Collapse in={tripExpanded} timeout="auto" unmountOnExit>
+                                        <CardContent>
+                                            <Typography variant="h6" color="textSecondary">
+                                                Technologies Used:
+                                        </Typography>
+                                            <Typography variant="body1" color="textSecondary">
+                                                MySQL, Java Spark, MariaDB, Junit, Maven, Bootstrap, Leaflets
+                                        </Typography>
+                                        </CardContent>
+                                    </Collapse>
+                                </Card>
+                            </Grid>
+                        </Grid>
+                    </Container>
                 </Fade>
             </ProjectStyles>
         </div>
